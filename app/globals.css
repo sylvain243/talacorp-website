@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-white text-navy antialiased;
+  }
+
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-gold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill bg-gold px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-gold-dark active:scale-[0.98];
+  }
+
+  .btn-navy {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill bg-navy px-7 py-3.5 text-sm font-semibold text-white transition-all hover:bg-navy-light active:scale-[0.98];
+  }
+
+  .btn-outline-light {
+    @apply inline-flex items-center justify-center gap-2 rounded-pill border-2 border-gold px-7 py-3.5 text-sm font-semibold text-gold transition-all hover:bg-gold hover:text-white active:scale-[0.98];
+  }
+
+  .section-padding {
+    @apply px-4 py-16 sm:px-6 lg:px-8 lg:py-24;
+  }
+
+  .container-main {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .section-eyebrow {
+    @apply text-sm font-semibold uppercase tracking-[0.15em] text-gold;
+  }
+
+  .section-title {
+    @apply text-3xl font-semibold text-navy sm:text-4xl lg:text-[2.75rem] lg:leading-tight;
+  }
+}
