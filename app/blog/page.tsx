@@ -4,10 +4,14 @@ import FadeUp from "@/components/FadeUp";
 import PageHero, { PageCTA } from "@/components/PageHero";
 import { blogPosts } from "@/data/blog";
 
-export const metadata = {
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Blog",
   description: "Actualités, conseils et insights sur la croissance digitale en RDC.",
-};
+  path: "/blog",
+});
 
 export default function BlogPage() {
   return (

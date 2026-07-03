@@ -1,9 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
+import BlogArticleBody from "@/components/blog/BlogArticleBody";
+import BlogArticleJsonLd from "@/components/blog/BlogArticleJsonLd";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
 import FadeUp from "@/components/FadeUp";
 import { PageCTA } from "@/components/PageHero";
 import { getBlogPostBySlug, blogPosts } from "@/data/blog";
+import { buildPageMetadata } from "@/lib/seo";
 
 interface BlogPostPageProps {
   params: { slug: string };
@@ -16,7 +20,13 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: BlogPostPageProps) {
   const post = getBlogPostBySlug(params.slug);
   if (!post) return { title: "Article introuvable" };
-  return { title: post.title, description: post.excerpt };
+  return buildPageMetadata({
+    title: post.title,
+    description: post.excerpt,
+    path: `/blog/${post.slug}`,
+    openGraphType: "article",
+    publishedTime: post.dateISO,
+  });
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
@@ -25,6 +35,15 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
 
   return (
     <>
+      <BlogArticleJsonLd post={post} />
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", path: "/" },
+          { name: "Blog", path: "/blog" },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ]}
+      />
+
       <section className="section-padding bg-navy text-center">
         <div className="container-main max-w-3xl">
           <FadeUp>
@@ -49,14 +68,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
       <section className="section-padding bg-white">
         <div className="container-main max-w-3xl">
           <FadeUp>
-            <p className="text-lg leading-relaxed text-navy/80">{post.excerpt}</p>
-            <div className="mt-8 space-y-4 text-navy/70">
-              <p>
-                Cet article sera bientôt disponible en intégralité. En attendant,
-                contactez notre équipe pour en discuter lors d&apos;une consultation
-                gratuite.
-              </p>
-            </div>
+            <BlogArticleBody post={post} />
           </FadeUp>
         </div>
       </section>

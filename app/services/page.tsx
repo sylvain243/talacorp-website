@@ -6,10 +6,15 @@ import PageHero, { PageCTA } from "@/components/PageHero";
 import ServiceIcon from "@/components/ServiceIcon";
 import { services, stats } from "@/data/content";
 
-export const metadata = {
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Services",
-  description: "Stratégie, marketing, transformation digitale et branding — nos expertises à Kinshasa.",
-};
+  description:
+    "Stratégie, marketing, transformation digitale et branding — nos expertises à Kinshasa.",
+  path: "/services",
+});
 
 export default function ServicesPage() {
   return (
@@ -39,11 +44,10 @@ export default function ServicesPage() {
                   <div className="relative min-h-[220px] md:min-h-[280px]">
                     <Image
                       src={service.heroImage}
-                      alt=""
+                      alt={`${service.title} — service Talacorp Kinshasa`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"
-                      aria-hidden="true"
                     />
                     <div
                       className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/20 to-transparent md:bg-gradient-to-r md:from-transparent md:via-navy/10 md:to-navy/60"

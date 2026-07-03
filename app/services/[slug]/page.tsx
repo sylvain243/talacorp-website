@@ -7,6 +7,9 @@ import ServiceHero from "@/components/ServiceHero";
 import ConsultationButton from "@/components/ConsultationButton";
 import ServiceEnhancedSections from "@/components/service/ServiceEnhancedSections";
 import { PageCTA } from "@/components/PageHero";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import ServiceFaqJsonLd from "@/components/seo/ServiceFaqJsonLd";
+import { buildPageMetadata } from "@/lib/seo";
 import { getServiceBySlug, services } from "@/data/content";
 
 interface ServicePageProps {
@@ -20,7 +23,11 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: ServicePageProps) {
   const service = getServiceBySlug(params.slug);
   if (!service) return { title: "Service introuvable" };
-  return { title: service.title, description: service.description };
+  return buildPageMetadata({
+    title: service.title,
+    description: service.description,
+    path: `/services/${service.slug}`,
+  });
 }
 
 export default function ServiceDetailPage({ params }: ServicePageProps) {
@@ -31,6 +38,15 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
 
   return (
     <>
+      {service.faqs && service.faqs.length > 0 && <ServiceFaqJsonLd faqs={service.faqs} />}
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${service.slug}` },
+        ]}
+      />
+
       <ServiceHero
         title={service.title}
         tagline={service.tagline}
@@ -153,11 +169,10 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                     <div className="relative hidden w-36 shrink-0 sm:block">
                       <Image
                         src={item.heroImage}
-                        alt=""
+                        alt={`${item.title} — Talacorp`}
                         fill
                         className="object-cover"
                         sizes="144px"
-                        aria-hidden="true"
                       />
                     </div>
                     <div className="flex flex-1 flex-col p-6">

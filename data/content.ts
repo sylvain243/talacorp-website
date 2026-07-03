@@ -116,7 +116,7 @@ export const services: Service[] = [
     methodTagline:
       "Diagnostic, Plan, Implémentation, Outils, Tracking, Évolution — un cap clair sur 90 jours puis trimestre par trimestre.",
     consultationCta: "Réserver un diagnostic stratégique gratuit (30 min)",
-    caseStudySlugs: ["logitrans-strategie-croissance", "kinfood-campagne-meta"],
+    caseStudySlugs: ["gl-consult-plateforme-web", "groupe-loli-plateforme-web"],
     whyTalacorp: [
       {
         title: "Connaissance du terrain congolais",
@@ -211,7 +211,7 @@ export const services: Service[] = [
     methodTagline:
       "Un cycle court et mesurable : Audit, Ciblage, Quick launch, Optimisation, Upscale, Reporting, Expansion.",
     consultationCta: "Réserver un audit marketing gratuit (30 min)",
-    caseStudySlugs: ["kinfood-campagne-meta", "boutique-elegance-ecommerce"],
+    caseStudySlugs: ["nomaat-group-marketing-acquisition", "mpeti-avocats-presence-digitale"],
     whyTalacorp: [
       {
         title: "Expertise locale Kinshasa",
@@ -306,7 +306,7 @@ export const services: Service[] = [
     methodTagline:
       "Brief, UX/UI, Iteration, Launch, Drive — développement itératif avec validations à chaque étape.",
     consultationCta: "Réserver un audit digital gratuit (30 min)",
-    caseStudySlugs: ["boutique-elegance-ecommerce", "techkin-saas-automation"],
+    caseStudySlugs: ["safecheck-rdc-digitalisation-sante", "oses-legal-plateforme-web", "cerise-care-plateforme-web"],
     whyTalacorp: [
       {
         title: "Solutions adaptées à la RDC",
@@ -401,7 +401,7 @@ export const services: Service[] = [
     methodTagline:
       "Immersion, Design, Exploration, Normalisation, Transmission — de la vision à la charte livrée.",
     consultationCta: "Réserver un audit de marque gratuit (30 min)",
-    caseStudySlugs: ["afrikstyle-rebranding", "congofoods-identite-marque"],
+    caseStudySlugs: ["ministere-travail-branding", "dinacope-branding-print"],
     whyTalacorp: [
       {
         title: "Identité ancrée localement",
@@ -475,13 +475,46 @@ export const services: Service[] = [
   },
 ];
 
-export const homeTestimonial = {
-  quote:
-    "Grâce à Talacorp, nous avons doublé notre acquisition de clients en trois mois.",
-  name: "Marie Kabongo",
-  role: "Directrice, Boutique Élégance — Kinshasa",
-  initials: "MK",
-};
+export interface HomeTestimonial {
+  quote: string;
+  name: string;
+  role: string;
+  initials: string;
+}
+
+export const homeTestimonials: HomeTestimonial[] = [
+  {
+    quote:
+      "Talacorp a digitalisé l'ensemble de nos processus métiers et renforcé notre visibilité auprès de nos clients institutionnels. Un partenaire technique de confiance.",
+    name: "SafeCheck RDC",
+    role: "Gestion des soins de santé — Kinshasa",
+    initials: "SC",
+  },
+  {
+    quote:
+      "En moins d'un an, notre marque s'est imposée comme référence premium. Talacorp a su traduire notre expertise en une présence digitale qui convertit.",
+    name: "Nomaat Group",
+    role: "Conseil fiscal & déménagement pro. — RDC",
+    initials: "NG",
+  },
+  {
+    quote:
+      "Notre cabinet dispose enfin d'une vitrine digitale à la hauteur de notre expertise OHADA. Crédible, bilingue et visible auprès de nos clients d'affaires.",
+    name: "Cabinet Mpeti & Avocats",
+    role: "Droit des affaires — Kinshasa",
+    initials: "MA",
+  },
+  {
+    quote:
+      "De l'identité visuelle à la plateforme web, Talacorp a structuré notre lancement avec professionnalisme. Une équipe qui comprend le marché congolais.",
+    name: "Cerise Care",
+    role: "Services de santé à domicile — RDC",
+    initials: "CC",
+  },
+];
+
+/** @deprecated Utiliser homeTestimonials */
+export const homeTestimonial = homeTestimonials[0];
 
 export const bookingSection = {
   title: "Réalisons quelque chose d'incroyable ensemble !",

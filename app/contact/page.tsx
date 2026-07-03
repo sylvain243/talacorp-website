@@ -4,10 +4,14 @@ import PageHero from "@/components/PageHero";
 import BookingCalendar from "@/components/BookingCalendar";
 import { siteConfig } from "@/data/content";
 
-export const metadata = {
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
   title: "Contact",
   description: "Contactez Talacorp à Kinshasa — consultation gratuite de 30 minutes.",
-};
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

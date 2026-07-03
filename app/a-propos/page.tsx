@@ -4,10 +4,14 @@ import PageHero, { PageCTA } from "@/components/PageHero";
 import BookingCalendar from "@/components/BookingCalendar";
 import { aboutContent, siteConfig } from "@/data/content";
 
-export const metadata = {
+import type { Metadata } from "next";
+import { buildPageMetadata } from "@/lib/seo";
+
+export const metadata: Metadata = buildPageMetadata({
   title: "À propos",
   description: "Découvrez Talacorp, l'agence de croissance qui parle congolais à Kinshasa.",
-};
+  path: "/a-propos",
+});
 
 const valueIcons = [Target, Eye, Award];
 

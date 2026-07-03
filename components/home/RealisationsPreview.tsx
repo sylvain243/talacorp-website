@@ -1,10 +1,16 @@
+"use client";
+
 import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
 import CaseStudyCard from "@/components/CaseStudyCard";
+import TwoColumnCarousel, { CAROUSEL_PER_SLIDE, chunkItems } from "@/components/TwoColumnCarousel";
 import { realisations } from "@/data/realisations";
 
 export default function RealisationsPreview() {
-  const featured = realisations.slice(0, 4);
+  const slides = chunkItems(
+    realisations.map((project) => <CaseStudyCard key={project.slug} project={project} />),
+    CAROUSEL_PER_SLIDE,
+  );
 
   return (
     <section className="section-padding bg-cream">
@@ -20,13 +26,7 @@ export default function RealisationsPreview() {
           </p>
         </FadeUp>
 
-        <div className="grid gap-6 sm:grid-cols-2">
-          {featured.map((project, index) => (
-            <FadeUp key={project.slug} delay={index * 0.1}>
-              <CaseStudyCard project={project} />
-            </FadeUp>
-          ))}
-        </div>
+        <TwoColumnCarousel slides={slides} ariaLabel="Réalisations Talacorp" />
 
         <FadeUp className="mt-10 text-center">
           <Link

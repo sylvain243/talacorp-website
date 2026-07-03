@@ -1,9 +1,18 @@
 import Link from "next/link";
+import Image from "next/image";
 import { notFound } from "next/navigation";
-import { ArrowLeft, Star } from "lucide-react";
+import { ArrowLeft, ExternalLink, Star } from "lucide-react";
 import FadeUp from "@/components/FadeUp";
 import { PageCTA } from "@/components/PageHero";
-import { getRealisationBySlug, realisations } from "@/data/realisations";
+import WebsitePreview from "@/components/WebsitePreview";
+import BreadcrumbJsonLd from "@/components/seo/BreadcrumbJsonLd";
+import { buildPageMetadata } from "@/lib/seo";
+import {
+  getRealisationBySlug,
+  getRealisationCoverImage,
+  getWebsiteDomain,
+  realisations,
+} from "@/data/realisations";
 
 interface RealisationPageProps {
   params: { slug: string };
@@ -16,15 +25,29 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: RealisationPageProps) {
   const project = getRealisationBySlug(params.slug);
   if (!project) return { title: "Réalisation introuvable" };
-  return { title: project.title, description: project.challenge };
+  return buildPageMetadata({
+    title: project.title,
+    description: project.challenge,
+    path: `/realisations/${project.slug}`,
+  });
 }
 
 export default function RealisationDetailPage({ params }: RealisationPageProps) {
   const project = getRealisationBySlug(params.slug);
   if (!project) notFound();
 
+  const coverImage = getRealisationCoverImage(project);
+
   return (
     <>
+      <BreadcrumbJsonLd
+        items={[
+          { name: "Accueil", path: "/" },
+          { name: "Réalisations", path: "/realisations" },
+          { name: project.title, path: `/realisations/${project.slug}` },
+        ]}
+      />
+
       <section className="section-padding bg-navy">
         <div className="container-main">
           <FadeUp>
@@ -45,24 +68,58 @@ export default function RealisationDetailPage({ params }: RealisationPageProps) 
               {project.title}
             </h1>
             <p className="mt-2 text-lg text-white/60">Client : {project.client}</p>
+            {project.website && (
+              <a
+                href={project.website}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-3 inline-flex items-center gap-2 rounded-pill border border-gold/40 bg-gold/10 px-4 py-2 text-sm font-medium text-gold transition-colors hover:bg-gold/20"
+              >
+                {getWebsiteDomain(project.website)}
+                <ExternalLink size={14} aria-hidden="true" />
+              </a>
+            )}
           </FadeUp>
         </div>
       </section>
 
       <div
-        className="mx-auto max-w-5xl px-4 sm:px-6"
+        className="mx-auto max-w-5xl space-y-6 px-4 sm:px-6"
         style={{ marginTop: "-2rem" }}
       >
         <FadeUp>
           <div
-            className="flex h-64 items-end rounded-card p-8 sm:h-80"
+            className="relative flex h-64 items-end overflow-hidden rounded-card p-8 sm:h-80"
             style={{ backgroundColor: project.coverColor }}
           >
-            <span className="rounded-pill bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
+            <Image
+              src={coverImage}
+              alt={`${project.title} — ${project.client}`}
+              fill
+              className="object-cover object-center"
+              sizes="(max-width: 1024px) 100vw, 896px"
+              priority
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-navy/30 to-transparent" />
+            <span className="relative rounded-pill bg-white/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm">
               {project.resultHighlight}
             </span>
           </div>
         </FadeUp>
+
+        {project.website && (
+          <FadeUp delay={0.05}>
+            <div>
+              <h2 className="mb-4 text-lg font-semibold text-navy">Aperçu du site web</h2>
+              <WebsitePreview
+                url={project.website}
+                title={project.client}
+                fallbackImage={coverImage}
+                comingSoon={project.websiteComingSoon ?? false}
+              />
+            </div>
+          </FadeUp>
+        )}
       </div>
 
       <section className="section-padding bg-white">
@@ -91,26 +148,6 @@ export default function RealisationDetailPage({ params }: RealisationPageProps) 
               ))}
             </div>
           </FadeUp>
-        </div>
-      </section>
-
-      <section className="section-padding bg-cream">
-        <div className="container-main">
-          <FadeUp className="mb-8 text-center">
-            <h2 className="text-2xl font-semibold text-navy">Galerie</h2>
-          </FadeUp>
-          <div className="grid gap-4 sm:grid-cols-3">
-            {project.gallery.map((item, index) => (
-              <FadeUp key={item.label} delay={index * 0.1}>
-                <div
-                  className="flex h-40 items-end rounded-card p-4 sm:h-48"
-                  style={{ backgroundColor: item.color }}
-                >
-                  <span className="text-sm font-medium text-white/80">{item.label}</span>
-                </div>
-              </FadeUp>
-            ))}
-          </div>
         </div>
       </section>
 

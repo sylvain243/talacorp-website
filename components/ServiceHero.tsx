@@ -27,12 +27,11 @@ export default function ServiceHero({
     <section className="relative min-h-[42vh] overflow-hidden sm:min-h-[48vh]">
       <Image
         src={heroImage}
-        alt=""
+        alt={`${title} — service Talacorp Kinshasa`}
         fill
         priority
         className="object-cover object-center"
         sizes="100vw"
-        aria-hidden="true"
       />
       <div
         className="absolute inset-0 bg-gradient-to-r from-navy via-navy/92 to-navy/70"
