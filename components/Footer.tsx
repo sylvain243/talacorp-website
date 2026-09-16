@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Facebook, Instagram, MapPin, MessageCircle } from "lucide-react";
 import Logo from "./Logo";
-import { getWhatsAppUrl, navLinks, siteConfig } from "@/data/content";
+import { footerLinks, getWhatsAppUrl, siteConfig } from "@/data/content";
 
 export default function Footer() {
   return (
@@ -23,7 +23,7 @@ export default function Footer() {
           <div>
             <p className="font-semibold text-gold">Entreprise</p>
             <ul className="mt-4 space-y-2">
-              {navLinks.slice(1).map((link) => (
+              {footerLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

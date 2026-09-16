@@ -29,6 +29,12 @@ export const siteConfig = {
 
 export const navLinks = [
   { label: "Accueil", href: "/" },
+  { label: "Services", href: "/services" },
+  { label: "Réalisations", href: "/realisations" },
+  { label: "Contact", href: "/contact" },
+];
+
+export const footerLinks = [
   { label: "À propos", href: "/a-propos" },
   { label: "Services", href: "/services" },
   { label: "Réalisations", href: "/realisations" },
