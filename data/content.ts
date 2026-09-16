@@ -12,7 +12,7 @@ export const siteConfig = {
   whatsappMessage: "Bonjour Talacorp, je souhaite en savoir plus sur vos services.",
   email: "askme@talacorporation.com",
   phone: "+243 811 530 869",
-  website: "https://talacorporation.com",
+  website: "https://www.talacorporation.com",
   hours: "Lun. au ven. : 08h00 à 17h30",
   openingHours: "Mo-Fr 08:00-17:30",
   openingDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] as const,
@@ -23,7 +23,7 @@ export const siteConfig = {
   social: {
     facebook: "https://www.facebook.com/Talacorp",
     instagram: "https://www.instagram.com/talacorp",
-    website: "https://talacorporation.com",
+    website: "https://www.talacorporation.com",
   },
 };
 
