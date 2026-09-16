@@ -9,7 +9,7 @@ import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
   title: "Contact",
-  description: "Contactez Talacorp à Kinshasa — consultation gratuite de 30 minutes.",
+  description: "Contactez Talacorp à Kinshasa : consultation gratuite de 30 minutes.",
   path: "/contact",
 });
 

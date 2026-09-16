@@ -169,7 +169,7 @@ export default function ServiceDetailPage({ params }: ServicePageProps) {
                     <div className="relative hidden w-36 shrink-0 sm:block">
                       <Image
                         src={item.heroImage}
-                        alt={`${item.title} — Talacorp`}
+                        alt={`${item.title}, Talacorp`}
                         fill
                         className="object-cover"
                         sizes="144px"

@@ -6,7 +6,7 @@ interface LogoProps {
   className?: string;
 }
 
-/** Fichiers originaux dans /public — ne pas retoucher */
+/** Fichiers originaux dans /public : ne pas retoucher */
 const logos = {
   color: "/logo-color.png",
   light: "/logo-white.png",
@@ -14,7 +14,7 @@ const logos = {
 
 export default function Logo({ variant = "color", className = "" }: LogoProps) {
   return (
-    <Link href="/" className={`inline-flex shrink-0 items-center ${className}`} aria-label="Talacorp — Accueil">
+    <Link href="/" className={`inline-flex shrink-0 items-center ${className}`} aria-label="Talacorp, accueil">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`${logos[variant]}?v=3`}

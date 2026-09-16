@@ -26,7 +26,7 @@ export default function CaseStudyCard({ project, showWebsitePreview = false }: C
         >
           <Image
             src={coverImage}
-            alt={`${project.title} — ${project.client}`}
+            alt={`${project.title}, ${project.client}`}
             fill
             className="object-cover object-center opacity-90 transition-opacity group-hover:opacity-100"
             sizes="(max-width: 768px) 100vw, 33vw"

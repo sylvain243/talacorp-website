@@ -7,7 +7,7 @@ interface ConsultationButtonProps {
   label?: string;
 }
 
-/** Bouton CTA unique — mène vers le calendrier de consultation */
+/** Bouton CTA unique : mène vers le calendrier de consultation */
 export default function ConsultationButton({
   className = "",
   variant = "primary",

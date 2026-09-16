@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 import FadeUp from "@/components/FadeUp";
 import PageHero, { PageCTA } from "@/components/PageHero";
 import ServiceIcon from "@/components/ServiceIcon";
-import { services, stats } from "@/data/content";
+import { services, stats, statsNote } from "@/data/content";
 
 import type { Metadata } from "next";
 import { buildPageMetadata } from "@/lib/seo";
@@ -12,7 +12,7 @@ import { buildPageMetadata } from "@/lib/seo";
 export const metadata: Metadata = buildPageMetadata({
   title: "Services",
   description:
-    "Stratégie, marketing, transformation digitale et branding — nos expertises à Kinshasa.",
+    "Stratégie, marketing, transformation digitale et branding : nos expertises à Kinshasa.",
   path: "/services",
 });
 
@@ -21,17 +21,25 @@ export default function ServicesPage() {
     <>
       <PageHero
         title="4 leviers pour faire décoller votre entreprise"
-        subtitle="De la stratégie à l'exécution — une expertise complète, pensée pour le marché congolais."
+        subtitle="De la stratégie à l'exécution : une expertise complète, pensée pour le marché congolais."
       />
 
       <section className="border-b border-navy/10 bg-cream py-10">
-        <div className="container-main flex flex-wrap justify-center gap-10 sm:gap-16">
-          {stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <p className="text-2xl font-semibold text-navy sm:text-3xl">{stat.value}</p>
-              <p className="mt-1 text-sm text-navy/60">{stat.label}</p>
-            </div>
-          ))}
+        <div className="container-main">
+          <div className="flex flex-wrap justify-center gap-10 sm:gap-16">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <p className="text-2xl font-semibold text-navy sm:text-3xl">{stat.value}</p>
+                <p className="mt-1 text-sm text-navy/60">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+          <p className="mx-auto mt-6 max-w-2xl text-center text-xs text-navy/50 sm:text-sm">
+            {statsNote}{" "}
+            <Link href="/realisations" className="font-medium text-gold hover:text-gold-dark">
+              Voir les réalisations
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -44,7 +52,7 @@ export default function ServicesPage() {
                   <div className="relative min-h-[220px] md:min-h-[280px]">
                     <Image
                       src={service.heroImage}
-                      alt={`${service.title} — service Talacorp Kinshasa`}
+                      alt={`${service.title}, service Talacorp Kinshasa`}
                       fill
                       className="object-cover transition-transform duration-500 group-hover:scale-105"
                       sizes="(max-width: 768px) 100vw, 50vw"

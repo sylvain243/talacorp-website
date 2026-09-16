@@ -1,15 +1,23 @@
 export const siteConfig = {
   name: "Talacorp",
-  legalName: "Talacorporation",
+  legalName: "TALACORP SARLU",
   tagline: "L'agence de croissance qui parle congolais",
   location: "Kinshasa · RDC",
-  address: "5D, Avenue du Tchad, Commune de la Gombe. Kinshasa - RDC",
-  whatsapp: "+243903650808",
+  streetAddress: "8884, Av. Plateau, Immeuble Jonya Tower",
+  addressLocality: "Kinshasa",
+  addressCountry: "CD",
+  addressCountryName: "République Démocratique du Congo",
+  address: "8884, Av. Plateau, Immeuble Jonya Tower, Kinshasa, RDC",
+  whatsapp: "+243811530869",
   whatsappMessage: "Bonjour Talacorp, je souhaite en savoir plus sur vos services.",
   email: "askme@talacorporation.com",
-  phone: "+243 903 650 808",
+  phone: "+243 811 530 869",
   website: "https://talacorporation.com",
-  hours: "Lun – Ven : 08h00 – 17h30",
+  hours: "Lun. au ven. : 08h00 à 17h30",
+  openingHours: "Mo-Fr 08:00-17:30",
+  openingDays: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"] as const,
+  opens: "08:00",
+  closes: "17:30",
   ctaLabel: "Demander une consultation gratuite",
   bookingSectionId: "consultation",
   social: {
@@ -33,8 +41,8 @@ export const heroContent = {
   titleBefore: "Nous aidons votre entreprise à",
   titleHighlight: "décoller",
   subtitle:
-    "Stratégie, marketing digital, transformation digitale et branding — une agence tout-en-un à Kinshasa pour transformer vos ambitions en résultats mesurables.",
-  /** Photo d'équipe Talacorp — remplacer public/hero-bg.jpg si besoin */
+    "Stratégie, marketing digital, transformation digitale et branding : une agence tout-en-un à Kinshasa pour transformer vos ambitions en résultats mesurables.",
+  /** Photo d'équipe Talacorp : remplacer public/hero-bg.jpg si besoin */
   backgroundImage: "/hero-bg.png",
 };
 
@@ -44,6 +52,9 @@ export const stats = [
   { value: "x2", label: "Acquisition moyenne" },
   { value: "3 mois", label: "ROI moyen" },
 ];
+
+export const statsNote =
+  "Chiffres issus de nos accompagnements, notamment SafeCheck RDC, Nomaat Group et Cerise Care.";
 
 export type ServiceCategory = "strategie" | "marketing" | "transformation" | "branding";
 
@@ -107,21 +118,21 @@ export const services: Service[] = [
     cardDescription:
       "Formalisation, fiscalité, organisation interne et tableaux de bord pour des décisions éclairées.",
     problem:
-      "Vous vendez, vous grandissez — mais sans RCCM à jour, sans KPI clairs et avec des process informels, chaque nouveau contrat devient un risque. Vous pilotez à l'instinct alors que vos concurrents structurent.",
+      "Vous vendez, vous grandissez, mais sans RCCM à jour, sans KPI clairs et avec des process informels, chaque nouveau contrat devient un risque. Vous pilotez à l'instinct alors que vos concurrents structurent.",
     promise:
       "Nous bâtissons les fondations solides de votre entreprise : conformité légale, organisation interne et tableaux de bord pour décider avec des chiffres, pas des impressions.",
     intro:
       "Beaucoup d'entreprises congolaises performent commercialement mais manquent de structure : comptabilité floue, absence de KPI, process informels. Nous transformons cette énergie en machine de croissance mesurable.",
     methodName: "Méthode P.I.L.O.T.E.",
     methodTagline:
-      "Diagnostic, Plan, Implémentation, Outils, Tracking, Évolution — un cap clair sur 90 jours puis trimestre par trimestre.",
+      "Diagnostic, Plan, Implémentation, Outils, Tracking, Évolution : un cap clair sur 90 jours puis trimestre par trimestre.",
     consultationCta: "Réserver un diagnostic stratégique gratuit (30 min)",
     caseStudySlugs: ["gl-consult-plateforme-web", "groupe-loli-plateforme-web"],
     whyTalacorp: [
       {
         title: "Connaissance du terrain congolais",
         description:
-          "RCCM, numéro impôt, fiscalité locale, réalités administratives à Kinshasa — nous connaissons les étapes concrètes pour mettre votre entreprise en règle.",
+          "RCCM, numéro impôt, fiscalité locale, réalités administratives à Kinshasa : nous connaissons les étapes concrètes pour mettre votre entreprise en règle.",
       },
       {
         title: "Stratégie + exécution",
@@ -136,7 +147,7 @@ export const services: Service[] = [
       {
         title: "Consultation gratuite, sans engagement",
         description:
-          "30 minutes pour faire le point sur votre structure actuelle et identifier les 2–3 priorités immédiates.",
+          "30 minutes pour faire le point sur votre structure actuelle et identifier les 2 à 3 priorités immédiates.",
       },
     ],
     faqs: [
@@ -202,11 +213,11 @@ export const services: Service[] = [
     cardDescription:
       "Meta Ads, Google Ads, tunnels de conversion et automatisation pour un flux régulier de clients.",
     problem:
-      "Vous publiez, vous sponsorisez, parfois vous dépensez — mais les appels et commandes n'arrivent pas assez. Les leads WhatsApp s'évaporent, le coût par client grimpe, et vous ne savez pas quelle campagne rapporte vraiment.",
+      "Vous publiez, vous sponsorisez, parfois vous dépensez, mais les appels et commandes n'arrivent pas assez. Les leads WhatsApp s'évaporent, le coût par client grimpe, et vous ne savez pas quelle campagne rapporte vraiment.",
     promise:
       "Nous transformons votre budget publicitaire en flux régulier de clients qualifiés, avec des chiffres clairs : coût par lead, taux de conversion, retour sur investissement.",
     intro:
-      "À Kinshasa, vos clients sont sur mobile, sur WhatsApp et sur les réseaux sociaux. Nous créons des campagnes adaptées à ces habitudes — avec un suivi rigoureux du coût par lead et du retour sur investissement.",
+      "À Kinshasa, vos clients sont sur mobile, sur WhatsApp et sur les réseaux sociaux. Nous créons des campagnes adaptées à ces habitudes, avec un suivi rigoureux du coût par lead et du retour sur investissement.",
     methodName: "Méthode A.C.Q.U.I.R.E.",
     methodTagline:
       "Un cycle court et mesurable : Audit, Ciblage, Quick launch, Optimisation, Upscale, Reporting, Expansion.",
@@ -216,7 +227,7 @@ export const services: Service[] = [
       {
         title: "Expertise locale Kinshasa",
         description:
-          "Campagnes pensées pour le mobile, WhatsApp Business et les habitudes d'achat congolaises — pas des modèles importés.",
+          "Campagnes pensées pour le mobile, WhatsApp Business et les habitudes d'achat congolaises, pas des modèles importés.",
       },
       {
         title: "Exécution, pas seulement des slides",
@@ -231,7 +242,7 @@ export const services: Service[] = [
       {
         title: "Consultation gratuite, sans engagement",
         description:
-          "30 minutes pour auditer votre situation et identifier 2–3 leviers concrets — avant de signer quoi que ce soit.",
+          "30 minutes pour auditer votre situation et identifier 2 à 3 leviers concrets, avant de signer quoi que ce soit.",
       },
     ],
     faqs: [
@@ -248,7 +259,7 @@ export const services: Service[] = [
       {
         question: "Travaillez-vous avec WhatsApp et mobile money ?",
         answer:
-          "Oui. La majorité de nos tunnels de conversion passent par WhatsApp Business pour la prise de contact et la commande — c'est le canal le plus efficace à Kinshasa.",
+          "Oui. La majorité de nos tunnels de conversion passent par WhatsApp Business pour la prise de contact et la commande : c'est le canal le plus efficace à Kinshasa.",
       },
       {
         question: "Gérez-vous aussi le contenu (photos, vidéos) ?",
@@ -299,12 +310,12 @@ export const services: Service[] = [
     problem:
       "Vos équipes perdent des heures sur Excel et WhatsApp. Les commandes se perdent, les relances sont oubliées, et vous n'avez aucune visibilité en temps réel sur votre activité. Votre croissance est freinée par des outils inadaptés.",
     promise:
-      "Nous digitalisons vos opérations avec des sites, apps et automatisations fiables — pensés pour le mobile, WhatsApp et les moyens de paiement locaux.",
+      "Nous digitalisons vos opérations avec des sites, apps et automatisations fiables, pensés pour le mobile, WhatsApp et les moyens de paiement locaux.",
     intro:
       "Feuilles Excel, relances manuelles, paiements non tracés… Nous digitalisons vos opérations pour gagner du temps, réduire les erreurs et encaisser plus facilement via mobile money et autres moyens locaux.",
     methodName: "Méthode B.U.I.L.D.",
     methodTagline:
-      "Brief, UX/UI, Iteration, Launch, Drive — développement itératif avec validations à chaque étape.",
+      "Brief, UX/UI, Iteration, Launch, Drive : développement itératif avec validations à chaque étape.",
     consultationCta: "Réserver un audit digital gratuit (30 min)",
     caseStudySlugs: ["safecheck-rdc-digitalisation-sante", "oses-legal-plateforme-web", "cerise-care-plateforme-web"],
     whyTalacorp: [
@@ -316,7 +327,7 @@ export const services: Service[] = [
       {
         title: "Du sur-mesure, pas du template",
         description:
-          "Chaque outil est conçu pour vos process réels : CRM, e-commerce, facturation, tableaux de bord — pas un SaaS générique mal adapté.",
+          "Chaque outil est conçu pour vos process réels : CRM, e-commerce, facturation, tableaux de bord, pas un SaaS générique mal adapté.",
       },
       {
         title: "Formation incluse",
@@ -394,19 +405,19 @@ export const services: Service[] = [
     problem:
       "Votre logo change selon les supports, vos couleurs varient d'une carte de visite à l'autre, et vos clients ne vous reconnaissent pas en un coup d'œil. Une image disparate nuit à la confiance et à vos ventes.",
     promise:
-      "Nous créons une identité visuelle forte et cohérente — logo, charte, print et digital — pour que votre marque inspire confiance dès le premier contact.",
+      "Nous créons une identité visuelle forte et cohérente (logo, charte, print et digital) pour que votre marque inspire confiance dès le premier contact.",
     intro:
-      "Votre marque est votre première poignée de main. Nous créons des identités visuelles fortes, adaptées au marché congolais — modernes, mémorables et déclinables sur tous vos supports.",
+      "Votre marque est votre première poignée de main. Nous créons des identités visuelles fortes, adaptées au marché congolais : modernes, mémorables et déclinables sur tous vos supports.",
     methodName: "Méthode I.D.E.N.T.",
     methodTagline:
-      "Immersion, Design, Exploration, Normalisation, Transmission — de la vision à la charte livrée.",
+      "Immersion, Design, Exploration, Normalisation, Transmission : de la vision à la charte livrée.",
     consultationCta: "Réserver un audit de marque gratuit (30 min)",
     caseStudySlugs: ["ministere-travail-branding", "dinacope-branding-print"],
     whyTalacorp: [
       {
         title: "Identité ancrée localement",
         description:
-          "Nous créons des marques modernes qui parlent au public congolais — sans copier des tendances étrangères déconnectées du terrain.",
+          "Nous créons des marques modernes qui parlent au public congolais, sans copier des tendances étrangères déconnectées du terrain.",
       },
       {
         title: "Print + digital unifiés",
@@ -416,7 +427,7 @@ export const services: Service[] = [
       {
         title: "Livrables professionnels",
         description:
-          "Logo vectoriel, charte PDF, kit réseaux sociaux, fichiers print HD — tout ce qu'il faut pour imprimer et publier immédiatement.",
+          "Logo vectoriel, charte PDF, kit réseaux sociaux, fichiers print HD : tout ce qu'il faut pour imprimer et publier immédiatement.",
       },
       {
         title: "Consultation gratuite, sans engagement",
@@ -487,28 +498,28 @@ export const homeTestimonials: HomeTestimonial[] = [
     quote:
       "Talacorp a digitalisé l'ensemble de nos processus métiers et renforcé notre visibilité auprès de nos clients institutionnels. Un partenaire technique de confiance.",
     name: "SafeCheck RDC",
-    role: "Gestion des soins de santé — Kinshasa",
+    role: "Gestion des soins de santé, Kinshasa",
     initials: "SC",
   },
   {
     quote:
       "En moins d'un an, notre marque s'est imposée comme référence premium. Talacorp a su traduire notre expertise en une présence digitale qui convertit.",
     name: "Nomaat Group",
-    role: "Conseil fiscal & déménagement pro. — RDC",
+    role: "Conseil fiscal & déménagement pro., RDC",
     initials: "NG",
   },
   {
     quote:
       "Notre cabinet dispose enfin d'une vitrine digitale à la hauteur de notre expertise OHADA. Crédible, bilingue et visible auprès de nos clients d'affaires.",
     name: "Cabinet Mpeti & Avocats",
-    role: "Droit des affaires — Kinshasa",
+    role: "Droit des affaires, Kinshasa",
     initials: "MA",
   },
   {
     quote:
       "De l'identité visuelle à la plateforme web, Talacorp a structuré notre lancement avec professionnalisme. Une équipe qui comprend le marché congolais.",
     name: "Cerise Care",
-    role: "Services de santé à domicile — RDC",
+    role: "Services de santé à domicile, RDC",
     initials: "CC",
   },
 ];
@@ -536,7 +547,7 @@ export const bookingSection = {
   ],
   highlights: [
     { title: "Équipe d'experts", description: "Des spécialistes dédiés à votre croissance" },
-    { title: "Agence primée", description: "Reconnue pour l'excellence et l'innovation" },
+    { title: "Expertise terrain", description: "Une agence à Kinshasa, ancrée dans le marché congolais" },
     { title: "Résultats mesurables", description: "Chaque action est pilotée par la donnée" },
   ],
 };
@@ -566,6 +577,7 @@ export function getServiceBySlug(slug: string) {
 }
 
 export function getBookingUrl() {
+  // Compte Cal.com hébergé sur cal.eu (domaine EU). https://cal.com/talacorp n'existe pas.
   return process.env.NEXT_PUBLIC_BOOKING_URL ?? "https://www.cal.eu/talacorp";
 }
 

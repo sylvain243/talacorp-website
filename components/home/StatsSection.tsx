@@ -1,7 +1,8 @@
 "use client";
 
+import Link from "next/link";
 import FadeUp from "@/components/FadeUp";
-import { stats } from "@/data/content";
+import { stats, statsNote } from "@/data/content";
 
 export default function StatsSection() {
   return (
@@ -17,6 +18,12 @@ export default function StatsSection() {
             </FadeUp>
           ))}
         </div>
+        <p className="mx-auto mt-8 max-w-2xl text-center text-xs leading-relaxed text-navy/50 sm:text-sm">
+          {statsNote}{" "}
+          <Link href="/realisations" className="font-medium text-gold hover:text-gold-dark">
+            Voir les réalisations
+          </Link>
+        </p>
       </div>
     </section>
   );

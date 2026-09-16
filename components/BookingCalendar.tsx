@@ -41,7 +41,7 @@ export default function BookingCalendar({ className = "" }: BookingCalendarProps
         </h3>
         <p className="mx-auto mt-3 max-w-md text-navy/70">
           Le calendrier en ligne sera bientôt disponible. En attendant, contactez-nous
-          directement — nous vous répondons sous 24 h.
+          directement. Nous vous répondons sous 24 h.
         </p>
         <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
           <a
@@ -131,7 +131,7 @@ export default function BookingCalendar({ className = "" }: BookingCalendarProps
           <iframe
             key={embedUrl}
             src={embedUrl}
-            title={`Réserver — ${activeMeeting?.label ?? "consultation"}`}
+            title={`Réserver : ${activeMeeting?.label ?? "consultation"}`}
             className="h-[520px] w-full border-0 lg:h-[640px]"
             loading="lazy"
             allow="payment"

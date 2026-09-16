@@ -36,7 +36,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "1. Choisir le bon canal de vente",
         paragraphs: [
-          "À Kinshasa, la vente en ligne commence rarement par un site e-commerce classique. Elle commence là où se trouvent vos clients : WhatsApp, Facebook et Instagram. Le « social commerce » — présenter ses produits sur les réseaux et conclure la vente par messagerie — reste le modèle dominant. Un site web vient ensuite crédibiliser votre marque, centraliser votre catalogue et capter le trafic issu de Google.",
+          "À Kinshasa, la vente en ligne commence rarement par un site e-commerce classique. Elle commence là où se trouvent vos clients : WhatsApp, Facebook et Instagram. Le « social commerce » (présenter ses produits sur les réseaux et conclure la vente par messagerie) reste le modèle dominant. Un site web vient ensuite crédibiliser votre marque, centraliser votre catalogue et capter le trafic issu de Google.",
         ],
         list: [
           "WhatsApp Business : idéal pour démarrer, gérer les commandes et fidéliser par listes de diffusion.",
@@ -47,7 +47,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "2. Résoudre les deux nerfs de la guerre : paiement et livraison",
         paragraphs: [
-          "Le paiement à la livraison rassure encore beaucoup de clients kinois, mais le mobile money (M-Pesa, Orange Money, Airtel Money) s'impose comme le standard : proposez systématiquement les deux. Côté livraison, appuyez-vous sur des coursiers indépendants ou des services de livraison locaux, et soyez transparent sur les délais et les frais par commune — c'est l'un des premiers critères de confiance.",
+          "Le paiement à la livraison rassure encore beaucoup de clients kinois, mais le mobile money (M-Pesa, Orange Money, Airtel Money) s'impose comme le standard : proposez systématiquement les deux. Côté livraison, appuyez-vous sur des coursiers indépendants ou des services de livraison locaux, et soyez transparent sur les délais et les frais par commune : c'est l'un des premiers critères de confiance.",
         ],
       },
       {
@@ -78,7 +78,7 @@ export const blogPosts: BlogPost[] = [
     readTime: "7 min",
     coverColor: "#243558",
     intro:
-      "En République Démocratique du Congo, des milliers d'activités prospères restent informelles — et se privent ainsi d'accès aux marchés publics, aux financements bancaires, aux contrats avec les grandes entreprises et aux partenariats internationaux. La formalisation, encadrée par le droit OHADA, est la première marche vers la croissance. Voici le parcours, étape par étape.",
+      "En République Démocratique du Congo, des milliers d'activités prospères restent informelles et se privent ainsi d'accès aux marchés publics, aux financements bancaires, aux contrats avec les grandes entreprises et aux partenariats internationaux. La formalisation, encadrée par le droit OHADA, est la première marche vers la croissance. Voici le parcours, étape par étape.",
     sections: [
       {
         title: "1. Pourquoi se formaliser ?",
@@ -112,7 +112,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "4. Après l'immatriculation : rester en conformité",
         paragraphs: [
-          "La formalisation ne s'arrête pas au RCCM. Il faut tenir une comptabilité conforme au référentiel SYSCOHADA, déclarer et payer ses impôts (impôt sur les bénéfices, TVA le cas échéant, impôts sur les rémunérations), et respecter les obligations sociales. Beaucoup d'entrepreneurs échouent non pas à se créer, mais à rester en règle — d'où l'intérêt d'un accompagnement.",
+          "La formalisation ne s'arrête pas au RCCM. Il faut tenir une comptabilité conforme au référentiel SYSCOHADA, déclarer et payer ses impôts (impôt sur les bénéfices, TVA le cas échéant, impôts sur les rémunérations), et respecter les obligations sociales. Beaucoup d'entrepreneurs échouent non pas à se créer, mais à rester en règle : d'où l'intérêt d'un accompagnement.",
         ],
       },
     ],
@@ -131,18 +131,18 @@ export const blogPosts: BlogPost[] = [
     readTime: "6 min",
     coverColor: "#E0A82E",
     intro:
-      "Facebook et Instagram concentrent l'essentiel de l'audience digitale congolaise : c'est là que se joue la bataille de l'attention. Mais beaucoup d'entreprises « boostent » des publications sans stratégie et concluent que « la pub ne marche pas ». En réalité, Meta Ads fonctionne très bien en RDC — à condition de respecter quelques règles du jeu local. Voici les 5 pratiques que nous appliquons pour nos clients.",
+      "Facebook et Instagram concentrent l'essentiel de l'audience digitale congolaise : c'est là que se joue la bataille de l'attention. Mais beaucoup d'entreprises « boostent » des publications sans stratégie et concluent que « la pub ne marche pas ». En réalité, Meta Ads fonctionne très bien en RDC, à condition de respecter quelques règles du jeu local. Voici les 5 pratiques que nous appliquons pour nos clients.",
     sections: [
       {
         title: "1. Optimiser pour les conversations, pas pour les « likes »",
         paragraphs: [
-          "En RDC, la vente se conclut en messagerie. Configurez vos campagnes avec l'objectif « Messages » (WhatsApp ou Messenger) plutôt que l'engagement. Votre indicateur clé devient le coût par conversation entamée — c'est lui qui mesure le vrai retour sur investissement, pas le nombre de réactions.",
+          "En RDC, la vente se conclut en messagerie. Configurez vos campagnes avec l'objectif « Messages » (WhatsApp ou Messenger) plutôt que l'engagement. Votre indicateur clé devient le coût par conversation entamée : c'est lui qui mesure le vrai retour sur investissement, pas le nombre de réactions.",
         ],
       },
       {
         title: "2. Cibler finement la géographie et l'appareil",
         paragraphs: [
-          "Kinshasa n'est pas un marché homogène : le pouvoir d'achat et les habitudes varient d'une commune à l'autre. Ciblez par zones (rayon autour de la Gombe, Limete, Ngaliema...) selon votre zone de livraison ou de chalandise. Pensez aussi aux formats légers : une grande partie de l'audience navigue sur mobile avec une connexion limitée — privilégiez des visuels compressés et des vidéos courtes.",
+          "Kinshasa n'est pas un marché homogène : le pouvoir d'achat et les habitudes varient d'une commune à l'autre. Ciblez par zones (rayon autour de la Gombe, Limete, Ngaliema...) selon votre zone de livraison ou de chalandise. Pensez aussi aux formats légers : une grande partie de l'audience navigue sur mobile avec une connexion limitée. Privilégiez des visuels compressés et des vidéos courtes.",
         ],
       },
       {
@@ -152,7 +152,7 @@ export const blogPosts: BlogPost[] = [
         ],
       },
       {
-        title: "4. Répondre vite — très vite",
+        title: "4. Répondre vite, très vite",
         paragraphs: [
           "Une conversation publicitaire non répondue dans l'heure est une vente perdue. Organisez la prise en charge des messages : réponses rapides enregistrées, catalogue WhatsApp à jour, et si le volume grandit, un agent conversationnel pour qualifier les demandes hors horaires. Le budget publicitaire ne vaut que ce que vaut votre réactivité commerciale.",
         ],
@@ -184,7 +184,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "1. La cohérence avant la beauté",
         paragraphs: [
-          "Un beau logo ne suffit pas. Ce qui inspire confiance, c'est la cohérence : mêmes couleurs, même ton, même qualité sur votre enseigne, vos cartes de visite, votre site web, vos réseaux sociaux et vos factures. Une charte graphique, même simple, garantit que chaque point de contact raconte la même histoire — celle d'une entreprise organisée et sérieuse.",
+          "Un beau logo ne suffit pas. Ce qui inspire confiance, c'est la cohérence : mêmes couleurs, même ton, même qualité sur votre enseigne, vos cartes de visite, votre site web, vos réseaux sociaux et vos factures. Une charte graphique, même simple, garantit que chaque point de contact raconte la même histoire, celle d'une entreprise organisée et sérieuse.",
         ],
       },
       {
@@ -228,13 +228,13 @@ export const blogPosts: BlogPost[] = [
       "« Automatiser » évoque souvent des projets coûteux réservés aux grandes entreprises. C'est faux : pour une PME congolaise, l'automatisation commence par des outils simples qui suppriment les tâches répétitives, réduisent les erreurs et libèrent du temps pour vendre. Voici une feuille de route pragmatique, du plus simple au plus ambitieux.",
     sections: [
       {
-        title: "Étape 1 — Cartographier ce qui vous fait perdre du temps",
+        title: "Étape 1 : Cartographier ce qui vous fait perdre du temps",
         paragraphs: [
           "Avant tout outil, listez les tâches répétitives de votre semaine : ressaisie de données, relances clients, établissement de factures, rapports manuels, réponses aux mêmes questions sur WhatsApp. Les meilleurs candidats à l'automatisation sont les tâches fréquentes, standardisées et sans valeur ajoutée humaine.",
         ],
       },
       {
-        title: "Étape 2 — Digitaliser la base : documents et communication",
+        title: "Étape 2 : Digitaliser la base (documents et communication)",
         list: [
           "Documents partagés : centralisez vos fichiers dans le cloud (Google Workspace ou Microsoft 365) pour finir avec les documents perdus et les versions multiples.",
           "Facturation digitale : modèles de devis et factures automatisés, numérotation et suivi des paiements.",
@@ -243,13 +243,13 @@ export const blogPosts: BlogPost[] = [
         paragraphs: [],
       },
       {
-        title: "Étape 3 — Automatiser la relation client",
+        title: "Étape 3 : Automatiser la relation client",
         paragraphs: [
           "Un simple CRM (même un tableur structuré au départ) permet de suivre chaque prospect : qui a demandé un devis, qui doit être relancé, quel client n'a pas commandé depuis trois mois. Les relances programmées et les messages de suivi automatiques récupèrent un chiffre d'affaires que la plupart des PME laissent s'évaporer. Un agent conversationnel sur WhatsApp peut ensuite qualifier les demandes 24h/24.",
         ],
       },
       {
-        title: "Étape 4 — Connecter et fiabiliser les opérations",
+        title: "Étape 4 : Connecter et fiabiliser les opérations",
         paragraphs: [
           "Quand les volumes grandissent, les outils isolés montrent leurs limites : c'est le moment des applications métiers. Gestion des stocks reliée aux ventes, tableaux de bord automatiques, workflows de validation : une application conçue pour vos processus élimine les doubles saisies et donne au dirigeant une visibilité en temps réel. C'est exactement ce type d'écosystème que nous avons déployé pour des acteurs comme Safecheck RDC dans la gestion des soins de santé.",
         ],
@@ -284,7 +284,7 @@ export const blogPosts: BlogPost[] = [
       {
         title: "1. La formule de base",
         paragraphs: [
-          "Le ROI marketing rapporte le profit généré par une action à son coût : ROI = (revenus attribués − coût de la campagne) ÷ coût de la campagne. Un ROI de 2 signifie que chaque dollar investi en a rapporté deux de plus. Encore faut-il savoir attribuer les revenus — c'est là que tout se joue.",
+          "Le ROI marketing rapporte le profit généré par une action à son coût : ROI = (revenus attribués - coût de la campagne) / coût de la campagne. Un ROI de 2 signifie que chaque dollar investi en a rapporté deux de plus. Encore faut-il savoir attribuer les revenus : c'est là que tout se joue.",
         ],
       },
       {
@@ -297,7 +297,7 @@ export const blogPosts: BlogPost[] = [
         title: "3. Les indicateurs qui comptent vraiment",
         list: [
           "Coût par conversation (CPC) : combien vous coûte, en moyenne, chaque conversation entamée depuis une publicité.",
-          "Taux de conversion : combien de conversations se transforment en ventes — c'est souvent là que se cache le problème.",
+          "Taux de conversion : combien de conversations se transforment en ventes. C'est souvent là que se cache le problème.",
           "Coût d'acquisition client (CAC) : coût total marketing divisé par le nombre de nouveaux clients : l'indicateur roi.",
           "Valeur vie client (LTV) : ce qu'un client rapporte sur la durée (achats répétés) : il justifie d'investir plus que la première vente.",
         ],

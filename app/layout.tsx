@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Poppins } from "next/font/google";
 import SiteHeader from "@/components/SiteHeader";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -6,22 +7,20 @@ import JsonLd from "@/components/JsonLd";
 import { siteConfig } from "@/data/content";
 import "./globals.css";
 
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.website),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: `${siteConfig.name} : ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
     "Agence de croissance à Kinshasa : stratégie, marketing digital, transformation digitale et branding. Demandez une consultation gratuite.",
-  keywords: [
-    "agence digitale Kinshasa",
-    "marketing digital RDC",
-    "transformation digitale Congo",
-    "branding Kinshasa",
-    "création site web Kinshasa",
-    "Talacorp",
-  ],
   alternates: {
     canonical: "/",
   },
@@ -53,7 +52,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="fr">
-      <body className="font-sans">
+      <body className={`${poppins.className} font-sans`}>
         <JsonLd />
         <SiteHeader />
         <main>{children}</main>

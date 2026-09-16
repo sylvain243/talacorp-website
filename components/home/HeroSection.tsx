@@ -12,11 +12,12 @@ export default function HeroSection() {
       {/* Image de fond + dégradé marine (style Agenshark) */}
       <Image
         src={heroContent.backgroundImage}
-        alt="Équipe Talacorp — agence digitale à Kinshasa"
+        alt="Équipe Talacorp, agence digitale à Kinshasa"
         fill
         priority
+        quality={75}
         className="object-cover object-center"
-        sizes="100vw"
+        sizes="(max-width: 1920px) 100vw, 1920px"
       />
       <div
         className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/55"

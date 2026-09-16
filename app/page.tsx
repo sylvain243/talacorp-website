@@ -8,7 +8,7 @@ import BookingSection from "@/components/home/BookingSection";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Agence digitale Kinshasa — Stratégie, Marketing & Transformation",
+  title: "Agence digitale Kinshasa : Stratégie, Marketing & Transformation",
   description:
     "Talacorp accompagne les entreprises congolaises : stratégie, marketing digital, transformation digitale et branding à Kinshasa. Consultation gratuite.",
   path: "/",

@@ -55,7 +55,7 @@ export default function RealisationsPageClient() {
               <div className="relative h-40 sm:h-48">
                 <Image
                   src={categoryCoverImages[active as RealisationCategory]}
-                  alt={`${activeCategory.label} — réalisations Talacorp`}
+                  alt={`${activeCategory.label}, réalisations Talacorp`}
                   fill
                   className="object-cover object-center"
                   sizes="(max-width: 1280px) 100vw, 1280px"

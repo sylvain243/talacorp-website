@@ -99,7 +99,7 @@ export default function WebsitePreview({
             {fallbackImage && (
               <Image
                 src={fallbackImage}
-                alt={`${title} — aperçu du site web`}
+                alt={`${title}, aperçu du site web`}
                 fill
                 className="object-cover opacity-25"
                 sizes="(max-width: 768px) 100vw, 896px"

@@ -1,6 +1,20 @@
 import { siteConfig } from "@/data/content";
 
 export default function JsonLd() {
+  const postalAddress = {
+    "@type": "PostalAddress",
+    streetAddress: siteConfig.streetAddress,
+    addressLocality: siteConfig.addressLocality,
+    addressCountry: siteConfig.addressCountry,
+  };
+
+  const openingHoursSpecification = {
+    "@type": "OpeningHoursSpecification",
+    dayOfWeek: [...siteConfig.openingDays],
+    opens: siteConfig.opens,
+    closes: siteConfig.closes,
+  };
+
   const organization = {
     "@context": "https://schema.org",
     "@type": "Organization",
@@ -11,32 +25,25 @@ export default function JsonLd() {
     description: siteConfig.tagline,
     email: siteConfig.email,
     telephone: siteConfig.phone,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address,
-      addressLocality: "Kinshasa",
-      addressCountry: "CD",
-    },
+    address: postalAddress,
     sameAs: [siteConfig.social.facebook, siteConfig.social.instagram, siteConfig.social.website],
   };
 
   const localBusiness = {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["ProfessionalService", "LocalBusiness"],
     name: siteConfig.name,
+    legalName: siteConfig.legalName,
     image: `${siteConfig.website}/logo-color.png`,
     url: siteConfig.website,
     telephone: siteConfig.phone,
     email: siteConfig.email,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: siteConfig.address,
-      addressLocality: "Kinshasa",
-      addressCountry: "CD",
-    },
+    address: postalAddress,
+    openingHours: siteConfig.openingHours,
+    openingHoursSpecification,
     areaServed: {
       "@type": "Country",
-      name: "République Démocratique du Congo",
+      name: siteConfig.addressCountryName,
     },
     priceRange: "$$",
   };

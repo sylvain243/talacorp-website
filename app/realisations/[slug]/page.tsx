@@ -94,7 +94,7 @@ export default function RealisationDetailPage({ params }: RealisationPageProps) 
           >
             <Image
               src={coverImage}
-              alt={`${project.title} — ${project.client}`}
+              alt={`${project.title}, ${project.client}`}
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 896px"

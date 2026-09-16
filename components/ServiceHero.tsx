@@ -27,7 +27,7 @@ export default function ServiceHero({
     <section className="relative min-h-[42vh] overflow-hidden sm:min-h-[48vh]">
       <Image
         src={heroImage}
-        alt={`${title} — service Talacorp Kinshasa`}
+        alt={`${title}, service Talacorp Kinshasa`}
         fill
         priority
         className="object-cover object-center"

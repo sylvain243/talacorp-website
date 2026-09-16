@@ -85,7 +85,18 @@ export default function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-8 text-center text-sm text-white/50">
-          <p>&copy; 2026 {siteConfig.name} · {siteConfig.location}</p>
+          <p>
+            &copy; 2026 {siteConfig.legalName} · {siteConfig.location}
+          </p>
+          <p className="mt-3 flex flex-wrap items-center justify-center gap-x-3 gap-y-1">
+            <Link href="/mentions-legales" className="hover:text-gold">
+              Mentions légales
+            </Link>
+            <span aria-hidden="true">·</span>
+            <Link href="/politique-de-confidentialite" className="hover:text-gold">
+              Politique de confidentialité
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
