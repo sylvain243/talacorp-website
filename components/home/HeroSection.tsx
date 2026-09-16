@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { BarChart3 } from "lucide-react";
 import ConsultationButton from "@/components/ConsultationButton";
 import FadeUp from "@/components/FadeUp";
-import { heroContent, stats } from "@/data/content";
+import GrowthWidget from "@/components/home/GrowthWidget";
+import { heroContent } from "@/data/content";
 
 export default function HeroSection() {
   return (
@@ -43,32 +43,8 @@ export default function HeroSection() {
             </div>
           </FadeUp>
 
-          {/* Carte flottante (comme Agenshark) */}
           <FadeUp delay={0.15} className="hidden lg:block">
-            <div className="ml-auto w-full max-w-xs rounded-card bg-white p-6 shadow-2xl">
-              <div className="flex -space-x-2">
-                {["MK", "JK", "PL"].map((initials) => (
-                  <div
-                    key={initials}
-                    className="flex h-10 w-10 items-center justify-center rounded-full border-2 border-white bg-navy text-xs font-semibold text-gold"
-                  >
-                    {initials}
-                  </div>
-                ))}
-              </div>
-              <p className="mt-4 text-lg font-semibold text-navy">{stats[0].value} projets livrés</p>
-              <p className="text-sm text-navy/60">{stats[1].value} clients satisfaits</p>
-              <div className="mt-5 flex items-end gap-1.5" aria-hidden="true">
-                {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-                  <div
-                    key={i}
-                    className="w-3 rounded-sm bg-gold"
-                    style={{ height: `${h}px` }}
-                  />
-                ))}
-                <BarChart3 className="mb-1 ml-2 text-navy/30" size={20} />
-              </div>
-            </div>
+            <GrowthWidget />
           </FadeUp>
         </div>
       </div>
