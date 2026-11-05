@@ -2,7 +2,6 @@ import { Reveal } from "@/components/motion/Motion";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { UserRound } from "lucide-react";
 import CtaBand from "@/components/site/CtaBand";
 import { getConsultationHref, siteConfig } from "@/data/content";
 import { poles } from "@/data/poles";
@@ -79,10 +78,15 @@ export default function AboutPage() {
 
       <section aria-labelledby="direction" className="bg-white">
         <Reveal className="container-main flex flex-wrap items-center gap-12 px-4 py-20 sm:px-6">
-          {/* Photo du gérant à fournir : remplacer ce bloc par une <Image> */}
-          <div className="flex h-[380px] min-w-0 flex-[0_1_340px] flex-col items-center justify-center gap-2.5 rounded-xl bg-cream text-[13px] text-[#5A6677]">
-            <UserRound size={80} strokeWidth={1.4} className="text-navy" aria-hidden="true" />
-            Photo du gérant à fournir
+          <div className="relative h-[440px] min-w-0 flex-[0_1_340px] overflow-hidden rounded-2xl bg-cream shadow-xl">
+            <Image
+              src="/images/sylvain-lutala.jpg"
+              alt="Sylvain Lutala, Associé et Gérant de TALACORP"
+              fill
+              quality={90}
+              sizes="(min-width:768px) 340px, 100vw"
+              className="object-cover object-top"
+            />
           </div>
           <div className="flex min-w-0 flex-[1_1_440px] flex-col gap-3.5">
             <p className="section-eyebrow">Direction</p>

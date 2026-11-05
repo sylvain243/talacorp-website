@@ -59,15 +59,17 @@ export default function HomePage() {
               </Link>
             </StaggerItem>
           </Stagger>
-          <div className="relative grid min-w-0 flex-[1_1_480px] grid-cols-2 grid-rows-[180px_180px] gap-3 sm:grid-rows-[220px_220px]">
-            <HeroMedia className="relative row-span-2 overflow-hidden rounded-xl">
-              <Image src="/images/equipe-reunion.jpg" alt="Équipe en réunion de travail" fill priority sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
-            </HeroMedia>
-            <HeroMedia delay={0.15} className="relative overflow-hidden rounded-xl">
-              <Image src="/images/branding.jpg" alt="Création d'identité visuelle" fill priority sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
-            </HeroMedia>
-            <HeroMedia delay={0.3} className="relative overflow-hidden rounded-xl">
-              <Image src="/images/video-materiel.jpg" alt="Matériel de tournage et de montage vidéo" fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
+          <div className="relative min-w-0 flex-[1_1_520px]">
+            <HeroMedia className="relative h-[320px] overflow-hidden rounded-2xl shadow-2xl sm:h-[440px] lg:h-[500px]">
+              <Image
+                src="/images/equipe-reunion.jpg"
+                alt="L'équipe TALACORP en réunion de travail"
+                fill
+                priority
+                quality={90}
+                sizes="(min-width:1240px) 640px, (min-width:1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </HeroMedia>
             <div className="tc-float absolute -bottom-6 left-4 hidden rounded-xl bg-white px-5 py-4 text-navy shadow-2xl sm:block" aria-hidden="true">
               <span className="block font-display text-lg font-extrabold">4 pôles, une seule équipe</span>
