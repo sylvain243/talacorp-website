@@ -1,7 +1,7 @@
 export const siteConfig = {
   name: "Talacorp",
   legalName: "TALACORP SARLU",
-  tagline: "L'agence de croissance qui parle congolais",
+  tagline: "Votre partenaire de croissance qui parle congolais",
   location: "Kinshasa · RDC",
   streetAddress: "8884, Av. Plateau, Immeuble Jonya Tower",
   addressLocality: "Kinshasa",
@@ -27,16 +27,19 @@ export const siteConfig = {
   },
 };
 
+/** Lien de la boutique : "#" tant qu'elle est en préparation, remettre "/boutique" à l'ouverture. */
+export const BOUTIQUE_HREF = "#";
+
 export const navLinks = [
-  { label: "Accueil", href: "/" },
-  { label: "Services", href: "/services" },
+  { label: "Nos pôles", href: "/services" },
+  { label: "Boutique goodies", href: BOUTIQUE_HREF },
   { label: "Réalisations", href: "/realisations" },
+  { label: "À propos", href: "/a-propos" },
   { label: "Contact", href: "/contact" },
 ];
 
 export const footerLinks = [
-  { label: "À propos", href: "/a-propos" },
-  { label: "Services", href: "/services" },
+  { label: "Boutique goodies", href: BOUTIQUE_HREF },
   { label: "Réalisations", href: "/realisations" },
   { label: "Blog", href: "/blog" },
   { label: "Contact", href: "/contact" },
@@ -560,7 +563,7 @@ export const bookingSection = {
 
 export const aboutContent = {
   heroTitle: "À propos de Talacorp",
-  heroSubtitle: "L'agence de croissance qui parle congolais.",
+  heroSubtitle: "Votre partenaire de croissance qui parle congolais.",
   mission:
     "Nous transformons les ambitions des entrepreneurs congolais en résultats concrets. De la stratégie à l'exécution, nous accompagnons chaque étape de votre croissance.",
   vision:
@@ -594,5 +597,5 @@ export function getBookingEventUrl(eventSlug?: string) {
 }
 
 export function getConsultationHref() {
-  return `/#${siteConfig.bookingSectionId}`;
+  return "/contact";
 }

@@ -10,24 +10,26 @@ const config: Config = {
     extend: {
       colors: {
         navy: {
-          DEFAULT: "#1B2A4A",
-          light: "#243558",
-          dark: "#121E35",
+          DEFAULT: "#183044",
+          light: "#22405A",
+          dark: "#0F2133",
         },
         gold: {
-          DEFAULT: "#E0A82E",
-          dark: "#C8921F",
-          light: "#F0C04A",
+          DEFAULT: "#F4B213",
+          dark: "#9A6E00",
+          light: "#F7C64A",
         },
-        cream: "#F7F6F2",
+        cream: "#EDF1F5",
+        ink: "#3E4C5E",
+        line: "#E3E8EE",
       },
       borderRadius: {
         card: "12px",
         pill: "999px",
       },
       fontFamily: {
-        sans: ["Poppins", "Inter", "system-ui", "sans-serif"],
-        serif: ["Georgia", "Times New Roman", "serif"],
+        sans: ["var(--font-body)", "Arial", "sans-serif"],
+        display: ["var(--font-display)", "Arial", "sans-serif"],
       },
     },
   },

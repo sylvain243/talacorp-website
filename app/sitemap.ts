@@ -6,7 +6,7 @@ import { siteConfig } from "@/data/content";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.website.replace(/\/$/, "");
-  const siteUpdated = new Date("2026-09-16");
+  const siteUpdated = new Date("2026-11-04");
 
   const staticPages: MetadataRoute.Sitemap = [
     { url: base, lastModified: siteUpdated, changeFrequency: "weekly", priority: 1 },

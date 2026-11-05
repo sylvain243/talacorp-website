@@ -46,10 +46,10 @@ export function PageCTA({ className = "" }: PageCTAProps) {
       <div className="container-main">
         <FadeUp>
           <h2 className="text-2xl font-semibold text-navy sm:text-3xl">
-            Prêt à faire décoller votre entreprise ?
+            Parlons de votre projet
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-navy/70">
-            Réservez votre consultation gratuite de 30 minutes avec notre équipe.
+            Une consultation gratuite de 15 ou 30 minutes, en visio ou dans nos bureaux.
           </p>
           <div className="mt-8">
             <ConsultationButton />

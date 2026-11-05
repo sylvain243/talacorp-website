@@ -1,83 +1,68 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
-import FadeUp from "@/components/FadeUp";
-import PageHero from "@/components/PageHero";
-import BookingCalendar from "@/components/BookingCalendar";
-import { siteConfig } from "@/data/content";
-
 import type { Metadata } from "next";
+import Image from "next/image";
+import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
+import BookingCalendar from "@/components/BookingCalendar";
+import { getWhatsAppUrl, siteConfig } from "@/data/content";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
-  title: "Contact",
-  description: "Contactez Talacorp à Kinshasa : consultation gratuite de 30 minutes.",
+  title: "Contact et consultation gratuite",
+  description:
+    "Réservez votre consultation gratuite de 15 ou 30 minutes avec TALACORP, en visio ou dans nos bureaux à Kinshasa.",
   path: "/contact",
 });
+
+const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(siteConfig.address)}`;
 
 export default function ContactPage() {
   return (
     <>
-      <PageHero
-        title="Contactez-nous"
-        subtitle="Une question ? Réservez directement votre consultation gratuite."
-      />
+      <section className="bg-navy text-white">
+        <div className="container-main flex flex-col gap-3.5 px-4 py-16 sm:px-6">
+          <p className="section-eyebrow-light">Contact</p>
+          <h1 className="font-display text-[38px] font-extrabold leading-[1.05] sm:text-[50px]">
+            Réservez votre consultation gratuite
+          </h1>
+          <p className="max-w-[640px] text-[19px] leading-relaxed text-[#D5DDE7]">
+            15 ou 30 minutes, en visio ou dans nos bureaux, pour comprendre votre besoin et vous proposer la bonne approche.
+          </p>
+        </div>
+      </section>
 
-      <section className="section-padding bg-white">
-        <div className="container-main grid gap-12 lg:grid-cols-2">
-          <FadeUp>
-            <h2 className="text-2xl font-semibold text-navy">Nos coordonnées</h2>
-            <ul className="mt-8 space-y-6">
-              <li className="flex gap-4">
-                <MapPin className="shrink-0 text-gold" size={22} aria-hidden="true" />
-                <div>
-                  <p className="font-medium text-navy">Adresse</p>
-                  <p className="mt-1 text-navy/70">{siteConfig.address}</p>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <Phone className="shrink-0 text-gold" size={22} aria-hidden="true" />
-                <div>
-                  <p className="font-medium text-navy">Téléphone</p>
-                  <a
-                    href={`tel:${siteConfig.phone.replace(/\s/g, "")}`}
-                    className="mt-1 text-navy/70 hover:text-gold"
-                  >
-                    {siteConfig.phone}
-                  </a>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <Mail className="shrink-0 text-gold" size={22} aria-hidden="true" />
-                <div>
-                  <p className="font-medium text-navy">Email</p>
-                  <a
-                    href={`mailto:${siteConfig.email}`}
-                    className="mt-1 text-navy/70 hover:text-gold"
-                  >
-                    {siteConfig.email}
-                  </a>
-                </div>
-              </li>
-              <li className="flex gap-4">
-                <Clock className="shrink-0 text-gold" size={22} aria-hidden="true" />
-                <div>
-                  <p className="font-medium text-navy">Horaires</p>
-                  <p className="mt-1 text-navy/70">{siteConfig.hours}</p>
-                </div>
-              </li>
-            </ul>
-          </FadeUp>
+      <section aria-label="Réservation et coordonnées" className="bg-cream">
+        <div className="container-main flex flex-wrap items-start gap-10 px-4 py-16 sm:px-6">
+          <div id={siteConfig.bookingSectionId} className="min-w-0 flex-[999_1_560px] scroll-mt-24">
+            <BookingCalendar />
+          </div>
 
-          <FadeUp delay={0.1}>
-            <div id={siteConfig.bookingSectionId}>
-              <h2 className="text-2xl font-semibold text-navy">Réserver un créneau</h2>
-            <p className="mt-2 text-navy/70">
-              30 minutes pour parler de vos objectifs, sans engagement.
-            </p>
-            <div className="mt-6">
-              <BookingCalendar />
+          <aside className="flex min-w-0 flex-[1_1_320px] flex-col gap-4">
+            <div className="relative h-[220px] overflow-hidden rounded-xl">
+              <Image src="/images/poignee-de-main.jpg" alt="Rencontre avec un client" fill sizes="(min-width:1024px) 380px, 100vw" className="object-cover" />
             </div>
+            <div className="flex flex-col gap-3.5 rounded-xl bg-white p-6 text-base">
+              <h2 className="font-display text-[22px] font-extrabold">Nous joindre</h2>
+              <a href={mapsHref} target="_blank" rel="noopener noreferrer" className="flex items-start gap-2.5 hover:underline">
+                <MapPin size={20} className="mt-0.5 flex-none" aria-hidden="true" />
+                {siteConfig.address}
+              </a>
+              <a href={`tel:${siteConfig.phone.replace(/\s/g, "")}`} className="flex items-center gap-2.5 hover:underline">
+                <Phone size={20} className="flex-none" aria-hidden="true" />
+                {siteConfig.phone}
+              </a>
+              <a href={`mailto:${siteConfig.email}`} className="flex items-center gap-2.5 hover:underline">
+                <Mail size={20} className="flex-none" aria-hidden="true" />
+                {siteConfig.email}
+              </a>
+              <span className="flex items-center gap-2.5">
+                <Clock size={20} className="flex-none" aria-hidden="true" />
+                {siteConfig.hours}
+              </span>
+              <a href={getWhatsAppUrl()} target="_blank" rel="noopener noreferrer" className="btn-primary mt-1">
+                <MessageCircle size={18} aria-hidden="true" />
+                Écrire sur WhatsApp
+              </a>
             </div>
-          </FadeUp>
+          </aside>
         </div>
       </section>
     </>

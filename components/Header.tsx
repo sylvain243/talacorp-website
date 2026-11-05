@@ -2,80 +2,86 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { useEffect, useState } from "react";
+import { Menu, ShoppingBag, X } from "lucide-react";
 import Logo from "./Logo";
-import ConsultationButton from "./ConsultationButton";
-import { navLinks } from "@/data/content";
+import { BOUTIQUE_HREF, getConsultationHref, navLinks } from "@/data/content";
 
-export default function Header({ pinned = false }: { pinned?: boolean }) {
+function isActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  if (href.startsWith("#")) return false;
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
+
+export default function Header() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
 
-  return (
-    <header className={pinned ? "" : "px-4 pb-3 sm:px-6"}>
-      <div className="container-main">
-        <div
-          className={`flex items-center justify-between rounded-pill border bg-white px-4 py-2.5 sm:px-6 ${
-            pinned
-              ? "border-navy/10 shadow-xl"
-              : "border-white/10 shadow-lg"
-          }`}
-        >
-          <Logo variant="color" />
+  useEffect(() => setOpen(false), [pathname]);
 
-          <nav className="hidden items-center gap-6 lg:flex xl:gap-8" aria-label="Navigation principale">
-            {navLinks.map((link) => (
+  return (
+    <header className="sticky top-0 z-50 border-b border-line bg-white/95 backdrop-blur">
+      <div className="container-main flex items-center justify-between gap-4 px-4 py-3.5 sm:px-6">
+        <Logo variant="color" />
+
+        <nav className="hidden items-center gap-7 lg:flex" aria-label="Navigation principale">
+          {navLinks.map((link) => {
+            const active = isActive(pathname, link.href);
+            return (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm font-medium transition-colors hover:text-gold ${
-                  pathname === link.href ? "text-gold" : "text-navy/80"
+                aria-current={active ? "page" : undefined}
+                className={`inline-flex items-center gap-1.5 border-b-2 py-1.5 text-base font-semibold text-navy transition-colors hover:border-gold ${
+                  active ? "border-gold" : "border-transparent"
                 }`}
               >
+                {link.href === BOUTIQUE_HREF && <ShoppingBag size={17} aria-hidden="true" />}
                 {link.label}
               </Link>
-            ))}
-            <ConsultationButton className="!px-5 !py-2.5 text-sm" />
-          </nav>
+            );
+          })}
+          <Link href={getConsultationHref()} className="btn-primary !min-h-[44px] !px-5 !py-3">
+            Consultation gratuite
+          </Link>
+        </nav>
 
-          <button
-            type="button"
-            className="rounded-lg p-2 text-navy lg:hidden"
-            onClick={() => setOpen(!open)}
-            aria-expanded={open}
-            aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {open && (
-          <nav
-            className="mt-2 rounded-card border border-white/10 bg-white px-4 py-4 shadow-lg lg:hidden"
-            aria-label="Navigation mobile"
-          >
-            <ul className="flex flex-col gap-1">
-              {navLinks.map((link) => (
-                <li key={link.href}>
-                  <Link
-                    href={link.href}
-                    className={`block rounded-lg px-3 py-2.5 font-medium ${
-                      pathname === link.href ? "bg-cream text-gold" : "text-navy"
-                    }`}
-                    onClick={() => setOpen(false)}
-                  >
-                    {link.label}
-                  </Link>
-                </li>
-              ))}
-              <li className="pt-2">
-                <ConsultationButton className="w-full" />
-              </li>
-            </ul>
-          </nav>
-        )}
+        <button
+          type="button"
+          className="flex h-11 w-11 items-center justify-center rounded-lg text-navy lg:hidden"
+          onClick={() => setOpen(!open)}
+          aria-expanded={open}
+          aria-controls="menu-mobile"
+          aria-label={open ? "Fermer le menu" : "Ouvrir le menu"}
+        >
+          {open ? <X size={26} /> : <Menu size={26} />}
+        </button>
       </div>
+
+      {open && (
+        <nav id="menu-mobile" className="border-t border-line bg-white px-4 pb-5 pt-2 lg:hidden" aria-label="Navigation mobile">
+          <ul className="flex flex-col">
+            {navLinks.map((link) => (
+              <li key={link.href}>
+                <Link
+                  href={link.href}
+                  className={`flex items-center gap-2 rounded-lg px-3 py-3 text-base font-semibold ${
+                    isActive(pathname, link.href) ? "bg-cream text-navy" : "text-navy"
+                  }`}
+                >
+                  {link.href === BOUTIQUE_HREF && <ShoppingBag size={18} aria-hidden="true" />}
+                  {link.label}
+                </Link>
+              </li>
+            ))}
+            <li className="pt-3">
+              <Link href={getConsultationHref()} className="btn-primary w-full">
+                Consultation gratuite
+              </Link>
+            </li>
+          </ul>
+        </nav>
+      )}
     </header>
   );
 }
