@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { getConsultationHref } from "@/data/content";
 import { generalOffer } from "@/data/poles";
+import { Reveal } from "@/components/motion/Motion";
 
 export default function CtaBand({ withOffer = false }: { withOffer?: boolean }) {
   return (
     <section aria-labelledby="cta-titre" className="bg-white">
       <div className="container-main px-4 py-[72px] sm:px-6">
-        <div className="flex flex-wrap items-center justify-between gap-8 rounded-2xl border-l-8 border-gold bg-navy p-8 sm:p-12">
+        <Reveal className="flex flex-wrap items-center justify-between gap-8 rounded-2xl border-l-8 border-gold bg-navy p-8 sm:p-12">
           <div className="flex flex-[1_1_420px] flex-col gap-2.5">
             <h2 id="cta-titre" className="font-display text-3xl font-extrabold leading-tight text-white sm:text-[38px]">
               Parlons de votre projet
@@ -25,7 +26,7 @@ export default function CtaBand({ withOffer = false }: { withOffer?: boolean }) 
               </a>
             )}
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

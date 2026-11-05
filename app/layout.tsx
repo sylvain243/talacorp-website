@@ -4,6 +4,7 @@ import SiteHeader from "@/components/SiteHeader";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import JsonLd from "@/components/JsonLd";
+import { MotionProvider } from "@/components/motion/Motion";
 import { siteConfig } from "@/data/content";
 import "./globals.css";
 
@@ -69,9 +70,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="fr">
       <body className={`${display.variable} ${body.variable} font-sans`}>
         <JsonLd />
-        <SiteHeader />
-        <main>{children}</main>
-        <Footer />
+        <MotionProvider>
+          <SiteHeader />
+          <main>{children}</main>
+          <Footer />
+        </MotionProvider>
         <WhatsAppButton />
       </body>
     </html>

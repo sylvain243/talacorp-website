@@ -26,6 +26,8 @@ export interface PoleFeature {
   chips?: string[];
   link?: { label: string; href: string };
   dark?: boolean;
+  /** Sous-service présenté en bandeau discret (ex. affichage TRANSCO) */
+  compact?: boolean;
 }
 
 export interface PoleOffer {
@@ -136,11 +138,7 @@ export const poles: Pole[] = [
     hero: {
       title: "Votre marque, imprimée sur tous les supports",
       text: "Création d'identité, impression grand et petit format, goodies et habillage des bus TRANSCO, réalisés par une seule équipe.",
-      images: [
-        img("branding.jpg", "Création d'une identité visuelle"),
-        img("bus-transco.jpg", "Bus TRANSCO habillé"),
-        img("mockup-bus-flanc.jpg", "Maquette d'habillage de bus"),
-      ],
+      images: [img("branding.jpg", "Création d'une identité visuelle")],
       ctaLabel: "Demander un devis",
     },
     intro: {
@@ -158,25 +156,21 @@ export const poles: Pole[] = [
     },
     prestationsTitle: "Nos prestations",
     prestations: [
-      { title: "Création d'identité", text: "Logo, charte graphique, papeterie.", image: img("branding.jpg", "Planches d'identité visuelle") },
-      { title: "Grand format", text: "Bâches, kakemonos, enseignes, stands, véhicules.", image: img("gabarit-bus.jpg", "Gabarit grand format") },
+      { title: "Création d'identité", text: "Logo, charte graphique, papeterie." },
+      { title: "Grand format", text: "Bâches, kakemonos, enseignes, stands, habillage de véhicules." },
       { title: "Petit format", text: "Cartes de visite, flyers, brochures, rapports." },
       { title: "Goodies", text: "Textile, objets, bureau, événementiel.", href: BOUTIQUE_HREF },
     ],
     features: [
       {
         id: "transco",
-        eyebrow: "Affichage sur les bus TRANSCO",
+        eyebrow: "Sous-service · Affichage sur les bus TRANSCO",
         title: "De la maquette à la pose sur le bus",
         text: "Nous adaptons votre visuel aux gabarits TRANSCO, imprimons et posons l'habillage. Bet and You circule déjà avec nous.",
-        images: [
-          img("bus-transco.jpg", "Bus TRANSCO aux couleurs de Bet and You"),
-          img("mockup-bus-flanc.jpg", "Maquette flanc du bus"),
-          img("mockup-bus-dos.jpg", "Maquette dos du bus"),
-        ],
-        chips: ["Habillage complet", "Dos de bus", "Adaptation aux gabarits", "Durée selon votre campagne"],
+        images: [img("bus-transco.jpg", "Bus TRANSCO aux couleurs de Bet and You")],
+        chips: ["Habillage complet", "Dos de bus", "Durée selon votre campagne"],
         link: { label: "Intégrer le bus à une campagne", href: "/services/marketing-acquisition#transco" },
-        dark: true,
+        compact: true,
       },
     ],
     methodTitle: "Notre méthode",
@@ -287,7 +281,7 @@ export const poles: Pole[] = [
       { title: "Campagnes en ligne", text: "Meta, Google et TikTok, ciblées sur vos clients.", image: img("smartphone.jpg", "Publicité sur smartphone"), href: "#campagnes" },
       { title: "Vidéos animées", text: "Animations produits et vidéos explicatives.", image: img("animation-3d.jpg", "Personnage 3D animé"), href: "#videos" },
       { title: "Spots et réseaux sociaux", text: "Tournage, montage et formats verticaux.", image: img("video-materiel.jpg", "Matériel de tournage"), href: "#videos" },
-      { title: "Affichage bus TRANSCO", text: "Votre campagne visible dans toute la ville.", image: img("bus-transco.jpg", "Bus TRANSCO habillé"), href: "#transco" },
+      { title: "Suivi des résultats", text: "Coût par contact, demandes reçues et bilans réguliers.", image: img("dashboard.jpg", "Tableau de suivi des résultats"), href: "#campagnes" },
     ],
     features: [
       {
@@ -320,14 +314,11 @@ export const poles: Pole[] = [
       },
       {
         id: "transco",
-        eyebrow: "Affichage sur les bus TRANSCO",
+        eyebrow: "Sous-service · Affichage sur les bus TRANSCO",
         title: "Le bus, relais de votre campagne en ligne",
         text: "Nous coordonnons l'affichage sur les bus avec vos publicités digitales et vos vidéos, pour un même message vu partout dans Kinshasa.",
-        images: [
-          img("bus-transco.jpg", "Bus TRANSCO aux couleurs de Bet and You"),
-          img("mockup-bus-flanc.jpg", "Maquette flanc de bus"),
-          img("mockup-bus-dos.jpg", "Maquette dos de bus"),
-        ],
+        images: [img("mockup-bus-flanc.jpg", "Maquette d'habillage d'un bus TRANSCO")],
+        compact: true,
         link: { label: "Impression et pose de l'habillage", href: "/services/branding-print#transco" },
       },
     ],

@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion/Motion";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { Clock, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
@@ -18,7 +19,7 @@ export default function ContactPage() {
   return (
     <>
       <section className="bg-navy text-white">
-        <div className="container-main flex flex-col gap-3.5 px-4 py-16 sm:px-6">
+        <Reveal className="container-main flex flex-col gap-3.5 px-4 py-16 sm:px-6">
           <p className="section-eyebrow-light">Contact</p>
           <h1 className="font-display text-[38px] font-extrabold leading-[1.05] sm:text-[50px]">
             Réservez votre consultation gratuite
@@ -26,11 +27,11 @@ export default function ContactPage() {
           <p className="max-w-[640px] text-[19px] leading-relaxed text-[#D5DDE7]">
             15 ou 30 minutes, en visio ou dans nos bureaux, pour comprendre votre besoin et vous proposer la bonne approche.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section aria-label="Réservation et coordonnées" className="bg-cream">
-        <div className="container-main flex flex-wrap items-start gap-10 px-4 py-16 sm:px-6">
+        <Reveal className="container-main flex flex-wrap items-start gap-10 px-4 py-16 sm:px-6">
           <div id={siteConfig.bookingSectionId} className="min-w-0 flex-[999_1_560px] scroll-mt-24">
             <BookingCalendar />
           </div>
@@ -63,7 +64,7 @@ export default function ContactPage() {
               </a>
             </div>
           </aside>
-        </div>
+        </Reveal>
       </section>
     </>
   );

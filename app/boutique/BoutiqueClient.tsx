@@ -1,5 +1,7 @@
 "use client";
 
+import { Reveal } from "@/components/motion/Motion";
+
 import Image from "next/image";
 import { useMemo, useState } from "react";
 import { BookOpen, Coffee, Mail, MessageCircle, Presentation, Shirt, X } from "lucide-react";
@@ -42,7 +44,7 @@ export default function BoutiqueClient() {
 
   return (
     <section aria-labelledby="catalogue" className="bg-white">
-      <div className="container-main flex flex-wrap items-start gap-8 px-4 py-16 sm:px-6">
+      <Reveal className="container-main flex flex-wrap items-start gap-8 px-4 py-16 sm:px-6">
         <div className="flex min-w-0 flex-[999_1_640px] flex-col gap-6">
           <div className="flex flex-wrap items-center justify-between gap-4">
             <h2 id="catalogue" className="font-display text-[34px] font-extrabold">
@@ -164,7 +166,7 @@ export default function BoutiqueClient() {
             <span className="text-[13px] text-[#5A6677]">Réponse avec devis détaillé, sans engagement.</span>
           </div>
         </aside>
-      </div>
+      </Reveal>
     </section>
   );
 }

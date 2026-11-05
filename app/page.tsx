@@ -6,7 +6,8 @@ import LogosMarquee from "@/components/site/LogosMarquee";
 import PolesGrid from "@/components/site/PolesGrid";
 import MethodSteps from "@/components/site/MethodSteps";
 import CtaBand from "@/components/site/CtaBand";
-import { BOUTIQUE_HREF, getConsultationHref } from "@/data/content";
+import { getConsultationHref } from "@/data/content";
+import { HeroMedia, Reveal, Stagger, StaggerItem } from "@/components/motion/Motion";
 import { buildPageMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = buildPageMetadata({
@@ -36,33 +37,46 @@ export default function HomePage() {
       <section className="relative overflow-hidden bg-navy text-white">
         <div className="absolute inset-y-0 left-0 w-2 bg-gold" aria-hidden="true" />
         <div className="container-main flex flex-wrap items-center gap-12 px-4 py-16 sm:px-6 lg:py-20">
-          <div className="flex min-w-0 flex-[1_1_460px] flex-col gap-[22px]">
-            <p className="section-eyebrow-light">Stratégie, branding, digital et marketing</p>
+          <Stagger onLoad className="flex min-w-0 flex-[1_1_460px] flex-col gap-[22px]">
+            <StaggerItem><p className="section-eyebrow-light">Stratégie, branding, digital et marketing</p></StaggerItem>
+            <StaggerItem>
             <h1 className="font-display text-[40px] font-extrabold leading-[1.04] tracking-[-1px] sm:text-[58px]">
-              Votre partenaire de croissance qui parle congolais
+              Votre partenaire de croissance qui parle <span className="text-gold">congolais</span>
             </h1>
+            </StaggerItem>
+            <StaggerItem>
             <p className="max-w-[540px] text-[19px] leading-relaxed text-[#D5DDE7]">
               De la création de votre entreprise à sa croissance, une seule équipe à Kinshasa pour vous structurer, vous
               faire connaître, vous équiper et vous faire grandir.
             </p>
-            <div className="flex flex-wrap gap-3.5 pt-1.5">
+            </StaggerItem>
+            <StaggerItem className="flex flex-wrap gap-3.5 pt-1.5">
               <Link href={getConsultationHref()} className="btn-primary">
                 Demander une consultation gratuite
               </Link>
-              <Link href={BOUTIQUE_HREF} className="btn-outline-light">
-                Voir la boutique goodies
+              <Link href="#poles" className="btn-outline-light">
+                Découvrir nos 4 pôles
               </Link>
-            </div>
-          </div>
-          <div className="grid min-w-0 flex-[1_1_480px] grid-cols-2 grid-rows-[180px_180px] gap-3 sm:grid-rows-[220px_220px]">
-            <div className="relative row-span-2 overflow-hidden rounded-xl">
+            </StaggerItem>
+          </Stagger>
+          <div className="relative grid min-w-0 flex-[1_1_480px] grid-cols-2 grid-rows-[180px_180px] gap-3 sm:grid-rows-[220px_220px]">
+            <HeroMedia className="relative row-span-2 overflow-hidden rounded-xl">
               <Image src="/images/equipe-reunion.jpg" alt="Équipe en réunion de travail" fill priority sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
-            </div>
-            <div className="relative overflow-hidden rounded-xl">
-              <Image src="/images/bus-transco.jpg" alt="Bus TRANSCO habillé aux couleurs d'un annonceur" fill priority sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
-            </div>
-            <div className="relative overflow-hidden rounded-xl">
+            </HeroMedia>
+            <HeroMedia delay={0.15} className="relative overflow-hidden rounded-xl">
+              <Image src="/images/branding.jpg" alt="Création d'identité visuelle" fill priority sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
+            </HeroMedia>
+            <HeroMedia delay={0.3} className="relative overflow-hidden rounded-xl">
               <Image src="/images/video-materiel.jpg" alt="Matériel de tournage et de montage vidéo" fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
+            </HeroMedia>
+            <div className="tc-float absolute -bottom-6 left-4 hidden rounded-xl bg-white px-5 py-4 text-navy shadow-2xl sm:block" aria-hidden="true">
+              <span className="block font-display text-lg font-extrabold">4 pôles, une seule équipe</span>
+              <span className="mt-1 flex gap-1.5">
+                <span className="h-1.5 w-8 rounded-full bg-gold" />
+                <span className="h-1.5 w-8 rounded-full bg-navy" />
+                <span className="h-1.5 w-8 rounded-full bg-gold" />
+                <span className="h-1.5 w-8 rounded-full bg-navy" />
+              </span>
             </div>
           </div>
         </div>
@@ -74,15 +88,16 @@ export default function HomePage() {
 
       <section aria-labelledby="real-titre" className="bg-cream">
         <div className="container-main flex flex-col gap-8 px-4 py-20 sm:px-6">
-          <div className="flex flex-wrap items-end justify-between gap-4">
+          <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <h2 id="real-titre" className="section-title">Quelques réalisations</h2>
             <Link href="/realisations" className="text-base font-bold">
               Toutes les réalisations →
             </Link>
-          </div>
-          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+          </Reveal>
+          <Stagger className="grid grid-cols-1 gap-5 md:grid-cols-3">
             {featured.map((r) => (
-              <Link key={r.client} href="/realisations" className="flex flex-col overflow-hidden rounded-xl bg-white text-navy transition-shadow hover:shadow-lg">
+              <StaggerItem key={r.client} className="h-full">
+              <Link href="/realisations" className="flex h-full flex-col overflow-hidden rounded-xl bg-white text-navy shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
                 {r.image ? (
                   <span className="relative block h-[220px]">
                     <Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover" />
@@ -99,8 +114,9 @@ export default function HomePage() {
                   <span className="text-[15px] leading-relaxed text-ink">{r.text}</span>
                 </span>
               </Link>
+              </StaggerItem>
             ))}
-          </div>
+          </Stagger>
         </div>
       </section>
 

@@ -10,6 +10,7 @@ import ServiceFaqJsonLd from "@/components/seo/ServiceFaqJsonLd";
 import { buildPageMetadata } from "@/lib/seo";
 import { BOUTIQUE_HREF, getConsultationHref } from "@/data/content";
 import { getNextPole, getPoleBySlug, poles } from "@/data/poles";
+import { HeroMedia, Reveal, Stagger, StaggerItem } from "@/components/motion/Motion";
 
 interface PolePageProps {
   params: { slug: string };
@@ -48,13 +49,19 @@ export default function PolePage({ params }: PolePageProps) {
 
       <section className="bg-navy text-white">
         <div className="container-main flex flex-wrap items-center gap-12 px-4 py-16 sm:px-6 lg:py-20">
-          <div className="flex min-w-0 flex-[1_1_440px] flex-col gap-5">
-            <p className="section-eyebrow-light">
-              Pôle {pole.num} · {pole.stage}
-            </p>
-            <h1 className="font-display text-[38px] font-extrabold leading-[1.05] sm:text-[54px]">{pole.hero.title}</h1>
-            <p className="text-[19px] leading-relaxed text-[#D5DDE7]">{pole.hero.text}</p>
-            <div className="flex flex-wrap gap-3.5">
+          <Stagger onLoad className="flex min-w-0 flex-[1_1_440px] flex-col gap-5">
+            <StaggerItem>
+              <p className="section-eyebrow-light">
+                Pôle {pole.num} · {pole.stage}
+              </p>
+            </StaggerItem>
+            <StaggerItem>
+              <h1 className="font-display text-[38px] font-extrabold leading-[1.05] sm:text-[54px]">{pole.hero.title}</h1>
+            </StaggerItem>
+            <StaggerItem>
+              <p className="text-[19px] leading-relaxed text-[#D5DDE7]">{pole.hero.text}</p>
+            </StaggerItem>
+            <StaggerItem className="flex flex-wrap gap-3.5">
               <Link href={getConsultationHref()} className="btn-primary">
                 {pole.hero.ctaLabel}
               </Link>
@@ -63,17 +70,17 @@ export default function PolePage({ params }: PolePageProps) {
                   Télécharger l&apos;offre (PDF)
                 </a>
               )}
-            </div>
-          </div>
+            </StaggerItem>
+          </Stagger>
           <div className={`grid min-w-0 flex-[1_1_500px] gap-3 ${heroRest.length >= 2 ? "grid-cols-2 grid-rows-[170px_170px] sm:grid-rows-[200px_200px]" : "grid-cols-1"}`}>
-            <div className={`relative overflow-hidden rounded-xl ${heroRest.length >= 2 ? "row-span-2" : "h-[320px] sm:h-[420px]"}`}>
+            <HeroMedia className={`relative overflow-hidden rounded-xl ${heroRest.length >= 2 ? "row-span-2" : "h-[320px] sm:h-[420px]"}`}>
               <Image src={heroMain.src} alt={heroMain.alt} fill priority sizes="(min-width:1024px) 600px, 100vw" className="object-cover" />
-            </div>
+            </HeroMedia>
             {heroRest.length >= 2 &&
-              heroRest.slice(0, 2).map((im) => (
-                <div key={im.src} className="relative overflow-hidden rounded-xl">
+              heroRest.slice(0, 2).map((im, i) => (
+                <HeroMedia key={im.src} delay={0.15 * (i + 1)} className="relative overflow-hidden rounded-xl">
                   <Image src={im.src} alt={im.alt} fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
-                </div>
+                </HeroMedia>
               ))}
           </div>
         </div>
@@ -82,49 +89,58 @@ export default function PolePage({ params }: PolePageProps) {
       {pole.intro && (
         <section aria-labelledby="intro" className="bg-white">
           <div className="container-main flex flex-col gap-8 px-4 py-20 sm:px-6">
-            <h2 id="intro" className="section-title">{pole.intro.title}</h2>
-            <div className={`grid grid-cols-1 gap-5 ${pole.intro.items.length > 2 ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-2"}`}>
+            <Reveal>
+              <h2 id="intro" className="section-title">{pole.intro.title}</h2>
+            </Reveal>
+            <Stagger className={`grid grid-cols-1 gap-5 ${pole.intro.items.length > 2 ? "sm:grid-cols-2 lg:grid-cols-4" : "md:grid-cols-2"}`}>
               {pole.intro.items.map((it) => (
-                <div key={it.title} className="flex flex-col gap-2.5 rounded-xl bg-cream p-7">
+                <StaggerItem key={it.title} className="flex flex-col gap-2.5 rounded-xl bg-cream p-7 transition-colors duration-300 hover:bg-[#E2E8EF]">
                   <h3 className="text-[21px] font-extrabold">{it.title}</h3>
                   <p className="text-base leading-relaxed text-ink">{it.text}</p>
-                </div>
+                </StaggerItem>
               ))}
-            </div>
+            </Stagger>
           </div>
         </section>
       )}
 
       <section aria-labelledby="prestations" className="bg-cream">
         <div className="container-main flex flex-col gap-8 px-4 py-20 sm:px-6">
-          <h2 id="prestations" className="section-title">{pole.prestationsTitle}</h2>
-          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal>
+            <h2 id="prestations" className="section-title">{pole.prestationsTitle}</h2>
+          </Reveal>
+          <Stagger className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {pole.prestations.map((p) => {
+              const href = p.href && p.href !== "#" ? p.href : undefined;
               const body = (
                 <>
                   {p.image && (
-                    <span className="relative block h-40 w-full">
-                      <Image src={p.image.src} alt={p.image.alt} fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
+                    <span className="relative block h-40 w-full overflow-hidden">
+                      <Image src={p.image.src} alt={p.image.alt} fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                     </span>
                   )}
                   <span className={`flex flex-col gap-2 p-[22px] ${p.image ? "" : "border-t-4 border-gold"}`}>
                     <span className="font-display text-xl font-extrabold">{p.title}</span>
                     <span className="text-[15px] leading-relaxed text-ink">{p.text}</span>
-                    {p.href && <span className="text-[15px] font-bold">{p.href === BOUTIQUE_HREF ? "Voir la boutique →" : "En savoir plus →"}</span>}
+                    {href && <span className="text-[15px] font-bold">{href === BOUTIQUE_HREF ? "Voir la boutique →" : "En savoir plus →"}</span>}
                   </span>
                 </>
               );
-              return p.href ? (
-                <Link key={p.title} href={p.href} className="flex flex-col overflow-hidden rounded-xl bg-white text-navy transition-shadow hover:shadow-lg">
-                  {body}
-                </Link>
-              ) : (
-                <div key={p.title} className="flex flex-col overflow-hidden rounded-xl bg-white">
-                  {body}
-                </div>
+              return (
+                <StaggerItem key={p.title} className="h-full">
+                  {href ? (
+                    <Link href={href} className="group flex h-full flex-col overflow-hidden rounded-xl bg-white text-navy shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+                      {body}
+                    </Link>
+                  ) : (
+                    <div className="group flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
+                      {body}
+                    </div>
+                  )}
+                </StaggerItem>
               );
             })}
-          </div>
+          </Stagger>
         </div>
       </section>
 

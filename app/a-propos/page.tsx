@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion/Motion";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,7 +27,7 @@ export default function AboutPage() {
     <>
       <section className="relative overflow-hidden bg-navy text-white">
         <Image src="/images/equipe-reunion.jpg" alt="" fill priority sizes="100vw" className="object-cover opacity-30" />
-        <div className="container-main relative flex flex-col gap-[18px] px-4 py-20 sm:px-6 lg:py-[104px]">
+        <Reveal className="container-main relative flex flex-col gap-[18px] px-4 py-20 sm:px-6 lg:py-[104px]">
           <p className="section-eyebrow-light">À propos</p>
           <h1 className="max-w-[820px] font-display text-[38px] font-extrabold leading-[1.05] sm:text-[54px]">
             Une équipe congolaise au service de votre croissance
@@ -35,11 +36,11 @@ export default function AboutPage() {
             TALACORP réunit sous un même toit le conseil, la création, le digital et le marketing, pour accompagner les
             entreprises de Kinshasa de leur naissance à leur croissance.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <section aria-labelledby="mission" className="bg-white">
-        <div className="container-main flex flex-wrap items-center gap-12 px-4 py-20 sm:px-6">
+        <Reveal className="container-main flex flex-wrap items-center gap-12 px-4 py-20 sm:px-6">
           <div className="flex min-w-0 flex-[1_1_440px] flex-col gap-[18px]">
             <h2 id="mission" className="section-title">Notre mission</h2>
             <p className="text-[17px] leading-relaxed text-ink">
@@ -59,11 +60,11 @@ export default function AboutPage() {
               <Image src="/images/developpeur.jpg" alt="Membre de l'équipe digitale au travail" fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section aria-labelledby="valeurs" className="bg-cream">
-        <div className="container-main flex flex-col gap-8 px-4 py-20 sm:px-6">
+        <Reveal className="container-main flex flex-col gap-8 px-4 py-20 sm:px-6">
           <h2 id="valeurs" className="section-title">Ce qui nous guide</h2>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
@@ -73,11 +74,11 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section aria-labelledby="direction" className="bg-white">
-        <div className="container-main flex flex-wrap items-center gap-12 px-4 py-20 sm:px-6">
+        <Reveal className="container-main flex flex-wrap items-center gap-12 px-4 py-20 sm:px-6">
           {/* Photo du gérant à fournir : remplacer ce bloc par une <Image> */}
           <div className="flex h-[380px] min-w-0 flex-[0_1_340px] flex-col items-center justify-center gap-2.5 rounded-xl bg-cream text-[13px] text-[#5A6677]">
             <UserRound size={80} strokeWidth={1.4} className="text-navy" aria-hidden="true" />
@@ -89,11 +90,11 @@ export default function AboutPage() {
             <span className="text-[17px] font-semibold">Associé &amp; Gérant</span>
             {/* Texte de présentation à rédiger par Sylvain */}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section aria-labelledby="poles-apropos" className="bg-navy text-white">
-        <div className="container-main flex flex-col gap-7 px-4 py-[72px] sm:px-6">
+        <Reveal className="container-main flex flex-col gap-7 px-4 py-[72px] sm:px-6">
           <h2 id="poles-apropos" className="font-display text-[34px] font-extrabold">Quatre pôles, une seule équipe</h2>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {poles.map((p) => (
@@ -103,11 +104,11 @@ export default function AboutPage() {
               </Link>
             ))}
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <section aria-labelledby="legal" className="bg-white">
-        <div className="container-main flex flex-wrap items-center justify-between gap-6 px-4 py-14 sm:px-6">
+        <Reveal className="container-main flex flex-wrap items-center justify-between gap-6 px-4 py-14 sm:px-6">
           <div className="flex flex-col gap-1.5 text-[15px] text-ink">
             <h2 id="legal" className="mb-1 font-sans text-lg font-bold text-navy">{siteConfig.legalName}</h2>
             <span>{siteConfig.streetAddress}, {siteConfig.addressLocality}</span>
@@ -116,7 +117,7 @@ export default function AboutPage() {
           <Link href={getConsultationHref()} className="btn-primary">
             Nous rencontrer
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       <CtaBand withOffer />

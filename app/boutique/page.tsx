@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion/Motion";
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
@@ -19,7 +20,7 @@ export default function BoutiquePage() {
   return (
     <>
       <section className="bg-navy text-white">
-        <div className="container-main flex flex-wrap items-center gap-12 px-4 py-16 sm:px-6 lg:py-[72px]">
+        <Reveal className="container-main flex flex-wrap items-center gap-12 px-4 py-16 sm:px-6 lg:py-[72px]">
           <div className="flex min-w-0 flex-[1_1_440px] flex-col gap-[18px]">
             <p className="section-eyebrow-light">Boutique goodies</p>
             <h1 className="font-display text-[40px] font-extrabold leading-[1.05] sm:text-[52px]">Des objets à vos couleurs</h1>
@@ -41,13 +42,13 @@ export default function BoutiquePage() {
               <Image src="/images/equipe-reunion.jpg" alt="Équipe en réunion" fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover" />
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       <BoutiqueClient />
 
       <section aria-labelledby="marquage" className="bg-cream">
-        <div className="container-main flex flex-wrap items-center gap-12 px-4 py-[72px] sm:px-6">
+        <Reveal className="container-main flex flex-wrap items-center gap-12 px-4 py-[72px] sm:px-6">
           <div className="relative h-[300px] min-w-0 flex-[1_1_460px] overflow-hidden rounded-xl sm:h-[340px]">
             <Image src="/images/branding.jpg" alt="Déclinaison d'une marque sur différents supports" fill sizes="(min-width:1024px) 600px, 100vw" className="object-cover" />
           </div>
@@ -62,7 +63,7 @@ export default function BoutiquePage() {
               Découvrir le pôle Branding &amp; Print →
             </Link>
           </div>
-        </div>
+        </Reveal>
       </section>
     </>
   );
