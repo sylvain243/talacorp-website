@@ -30,6 +30,7 @@ export interface Realisation {
 export const realisations: Realisation[] = [
   {
     slug: "safecheck-rdc-digitalisation-sante",
+    coverImage: "/realisations/safecheck-rdc.png",
     title: "SafeCheck RDC : Digitalisation complète d'un acteur de la santé",
     client: "SafeCheck RDC",
     category: "transformation",
@@ -57,6 +58,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "nomaat-group-marketing-acquisition",
+    coverImage: "/realisations/covers/nomaat-group-marketing-acquisition.jpg",
     title: "Nomaat Group : Positionnement premium & acquisition",
     client: "Nomaat Group SAS",
     category: "marketing",
@@ -84,6 +86,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "mpeti-avocats-presence-digitale",
+    coverImage: "/realisations/covers/mpeti-avocats-presence-digitale.jpg",
     title: "Cabinet Mpeti & Avocats : Rayonnement juridique digital",
     client: "Cabinet Mpeti & Avocats Associés",
     category: "marketing",
@@ -111,6 +114,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "cerise-care-plateforme-web",
+    coverImage: "/realisations/cerise-care-dashboard.png",
     title: "Cerise Care : Plateforme web santé",
     client: "Cerise Care",
     category: "transformation",
@@ -138,6 +142,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "cerise-rdc-plateforme-web",
+    coverImage: "/realisations/covers/cerise-rdc-plateforme-web.jpg",
     title: "Cerise RDC : Services & solutions en RDC",
     client: "Cerise RDC",
     category: "transformation",
@@ -165,6 +170,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "oses-legal-plateforme-web",
+    coverImage: "/realisations/covers/oses-legal-plateforme-web.jpg",
     title: "OSES Legal : Accompagnement juridique digital",
     client: "OSES Legal",
     category: "transformation",
@@ -192,6 +198,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "genesis-construct-plateforme-web",
+    coverImage: "/realisations/covers/genesis-construct-plateforme-web.jpg",
     title: "Genesis Construct : Vitrine construction & travaux",
     client: "Genesis Construct",
     category: "transformation",
@@ -219,6 +226,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "gl-consult-plateforme-web",
+    coverImage: "/realisations/covers/gl-consult-plateforme-web.jpg",
     title: "GL Consult : Cabinet de conseil en ligne",
     client: "GL Consult",
     category: "strategie",
@@ -246,6 +254,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "groupe-loli-plateforme-web",
+    coverImage: "/realisations/covers/groupe-loli-plateforme-web.jpg",
     title: "Groupe Loli : Groupe multisectoriel",
     client: "Groupe Loli",
     category: "strategie",
@@ -273,6 +282,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "language-intelligency-plateforme-web",
+    coverImage: "/realisations/covers/language-intelligency-plateforme-web.jpg",
     title: "Language Intelligency : Formation linguistique",
     client: "Language Intelligency",
     category: "transformation",
@@ -300,6 +310,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "ministere-travail-branding",
+    coverImage: "/realisations/covers/ministere-travail-branding.jpg",
     title: "Ministère du Travail (RDC) : Branding institutionnel",
     client: "Ministère du Travail, RDC",
     category: "branding",
@@ -325,6 +336,7 @@ export const realisations: Realisation[] = [
   },
   {
     slug: "dinacope-branding-print",
+    coverImage: "/realisations/covers/dinacope-branding-print.jpg",
     title: "DINACOPE : Supports print & goodies",
     client: "DINACOPE",
     category: "branding",
@@ -359,7 +371,7 @@ export const categoryCoverImages: Record<RealisationCategory, string> = {
 };
 
 export function getRealisationCoverImage(project: Realisation): string {
-  return categoryCoverImages[project.category];
+  return project.coverImage ?? categoryCoverImages[project.category];
 }
 
 export function getWebsiteDomain(url: string): string {

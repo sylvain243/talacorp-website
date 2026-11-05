@@ -119,7 +119,7 @@ export default function PolePage({ params }: PolePageProps) {
                       <Image src={p.image.src} alt={p.image.alt} fill sizes="(min-width:1024px) 300px, 50vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
                     </span>
                   )}
-                  <span className={`flex flex-col gap-2 p-[22px] ${p.image ? "" : "border-t-4 border-gold"}`}>
+                  <span className={`flex flex-col gap-2 p-[22px] `}>
                     <span className="font-display text-xl font-extrabold">{p.title}</span>
                     <span className="text-[15px] leading-relaxed text-ink">{p.text}</span>
                     {href && <span className="text-[15px] font-bold">{href === BOUTIQUE_HREF ? "Voir la boutique →" : "En savoir plus →"}</span>}

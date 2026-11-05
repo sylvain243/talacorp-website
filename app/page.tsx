@@ -24,18 +24,16 @@ const steps = [
   { title: "Suivi", text: "Livraison, formation et accompagnement dans la durée." },
 ];
 
-/* Images des réalisations à choisir avec Sylvain : renseigner `image` pour remplacer l'emplacement. */
 const featured: { client: string; pole: string; text: string; image?: { src: string; alt: string } }[] = [
-  { client: "Bet and You", pole: "Branding & Print · Marketing", text: "Habillage publicitaire des bus TRANSCO." },
-  { client: "Ministère du Travail", pole: "Branding & Print", text: "Branding institutionnel et goodies." },
-  { client: "CERISE RDC", pole: "Transformation digitale", text: "Plateformes Syndic, Care et Immo, hébergement et infogérance." },
+  { client: "Bet and You", pole: "Branding & Print · Marketing", text: "Habillage publicitaire des bus TRANSCO.", image: { src: "/images/mockup-bus-flanc.jpg", alt: "Maquette d'habillage de bus pour Bet and You" } },
+  { client: "Ministère du Travail", pole: "Branding & Print", text: "Branding institutionnel et goodies.", image: { src: "/realisations/covers/ministere-travail-branding.jpg", alt: "Goodies aux couleurs du Ministère du Travail" } },
+  { client: "CERISE RDC", pole: "Transformation digitale", text: "Plateformes Syndic, Care et Immo, hébergement et infogérance.", image: { src: "/realisations/cerise-care-dashboard.png", alt: "Tableau de bord de la plateforme Cerise Care" } },
 ];
 
 export default function HomePage() {
   return (
     <>
       <section className="relative overflow-hidden bg-navy text-white">
-        <div className="absolute inset-y-0 left-0 w-2 bg-gold" aria-hidden="true" />
         <div className="container-main flex flex-wrap items-center gap-12 px-4 py-16 sm:px-6 lg:py-20">
           <Stagger onLoad className="flex min-w-0 flex-[1_1_460px] flex-col gap-[22px]">
             <StaggerItem><p className="section-eyebrow-light">Stratégie, branding, digital et marketing</p></StaggerItem>
@@ -101,8 +99,8 @@ export default function HomePage() {
               <StaggerItem key={r.client} className="h-full">
               <Link href="/realisations" className="flex h-full flex-col overflow-hidden rounded-xl bg-white text-navy shadow-sm transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl">
                 {r.image ? (
-                  <span className="relative block h-[220px]">
-                    <Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:768px) 33vw, 100vw" className="object-cover" />
+                  <span className="relative block h-[220px] overflow-hidden">
+                    <Image src={r.image.src} alt={r.image.alt} fill sizes="(min-width:768px) 400px, 100vw" className="object-cover object-left transition-transform duration-700 hover:scale-105" />
                   </span>
                 ) : (
                   <span className="flex h-[220px] flex-col items-center justify-center gap-2 bg-[#DCE3EB] text-[13px] text-ink">

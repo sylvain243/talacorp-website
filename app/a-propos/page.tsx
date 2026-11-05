@@ -67,7 +67,7 @@ export default function AboutPage() {
           <h2 id="valeurs" className="section-title">Ce qui nous guide</h2>
           <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
-              <div key={v.title} className="flex flex-col gap-2.5 rounded-xl border-t-4 border-gold bg-white p-[26px]">
+              <div key={v.title} className="flex flex-col gap-2.5 rounded-xl bg-white p-[26px]">
                 <h3 className="text-[21px] font-extrabold">{v.title}</h3>
                 <p className="text-[15px] leading-relaxed text-ink">{v.text}</p>
               </div>
